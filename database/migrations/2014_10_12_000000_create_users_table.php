@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->unsignedTinyInteger('age');
             $table->string('password');
-            $table->boolean('owner');
-            $table->boolean('admin');
+            $table->boolean('owner')->default(false);
+            $table->boolean('admin')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

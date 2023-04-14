@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RestaurantController;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Restaurantes
-Route::apiResource('/restaurants',RestaurantController::class);
+Route::apiResource('/restaurants',RestaurantController::class)
+->middleware('auth:sanctum')
+->except(['index','show']);
+
+Route::apiResource('/restaurants',RestaurantController::class)
+->only('show','index');
+
+//User
+Route::post('/login',[AuthController::class,'loginUser']);
+Route::post('/register',[AuthController::class,'createUser']);

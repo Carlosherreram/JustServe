@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RestaurantController extends Controller
 {
@@ -14,15 +15,35 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        return Restaurant::paginate(10,['food','location','name',]);
+        return Restaurant::paginate(10, ['food', 'location', 'name',]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRestaurantRequest $request)
+    public function store(StoreRestaurantRequest $storeRestaurant)
     {
-        return Restaurant::create($request,['user_id'=>Auth()->id()]);
+        /*
+        if (auth()->check()) {
+            return Restaurant::create([
+                'user_id' => auth()->user()->id,
+                'food' => $storeRestaurant->food,
+                'location' => $storeRestaurant->location,
+                'name' => $storeRestaurant->name,
+            ]);
+        } else {
+            return response()->json(['error' => 'Usuario no autenticado'], 401);
+        }*/
+
+        $restaurante = [
+            'user_id' => auth()->user()->id,
+            'food' => $storeRestaurant->food,
+            'location' => $storeRestaurant->location,
+            'name' => $storeRestaurant->name,
+        ];
+        DB::table('restaurants')->insert($restaurante);
+        return $restaurante;
+
     }
 
     /**
@@ -30,7 +51,7 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        return Restaurant::whereName($restaurant->name)->first(['food','location','name']);
+        return Restaurant::whereName($restaurant->name)->first(['food', 'location', 'name']);
     }
 
     /**
