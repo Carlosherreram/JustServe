@@ -29,6 +29,9 @@ Route::apiResource('/restaurants',RestaurantController::class)
 Route::apiResource('/restaurants',RestaurantController::class)
 ->only('show','index');
 
+Route::get('/showMine',[RestaurantController::class,'showMine'])
+->middleware('auth:sanctum');
+
 //User
 Route::post('/login',[AuthController::class,'loginUser']);
 Route::post('/register',[AuthController::class,'createUser']);

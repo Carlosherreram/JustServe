@@ -50,6 +50,20 @@ class RestaurantController extends Controller
     }
 
     /**
+     * Get restaurants by owner id
+     */
+
+     public function showMine(){
+        if (auth()->check()) {
+        return Restaurant::whereUser_id(auth()->user()->id)->paginate(10,['food','location','name']);
+        }
+        else {
+            return response()->json(['error' => 'Usuario no autenticado'], 401);
+        }
+    } 
+     
+
+    /**
      * Update the specified resource in storage.
      */
     public function update(StoreRestaurantRequest $request, Restaurant $restaurant)
