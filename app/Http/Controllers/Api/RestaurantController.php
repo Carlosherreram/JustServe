@@ -23,26 +23,18 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $storeRestaurant)
     {
-        /*
         if (auth()->check()) {
-            return Restaurant::create([
+            $restaurante = [
                 'user_id' => auth()->user()->id,
                 'food' => $storeRestaurant->food,
                 'location' => $storeRestaurant->location,
                 'name' => $storeRestaurant->name,
-            ]);
+            ];
+            DB::table('restaurants')->insert($restaurante);
+            return $restaurante;
         } else {
             return response()->json(['error' => 'Usuario no autenticado'], 401);
-        }*/
-
-        $restaurante = [
-            'user_id' => auth()->user()->id,
-            'food' => $storeRestaurant->food,
-            'location' => $storeRestaurant->location,
-            'name' => $storeRestaurant->name,
-        ];
-        DB::table('restaurants')->insert($restaurante);
-        return $restaurante;
+        }
 
     }
 
@@ -57,9 +49,24 @@ class RestaurantController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Restaurant $restaurant)
+    public function update(StoreRestaurantRequest $request, Restaurant $restaurant)
     {
-        //
+        if (auth()->check()) {
+            if($restaurant->user_id == auth()->user()->id){
+                $restaurant->update([
+                    'name'=>$request->name,
+                    'location'=>$request->location,
+                    'food'=>$request->food,
+                ]);
+            }
+            else{
+                return response()->json(['error'=>'No eres el propietario'], 401);
+            }
+        }
+
+        else {
+            return response()->json(['error' => 'Usuario no autenticado'], 401);
+        }
     }
 
     /**
@@ -67,6 +74,8 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
-        //
+        if($restaurant->user_id == auth()->user()->id){
+            return $restaurant->delete();
+        }
     }
 }
