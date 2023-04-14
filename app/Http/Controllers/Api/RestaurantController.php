@@ -31,6 +31,9 @@ class RestaurantController extends Controller
                 'name' => $storeRestaurant->name,
             ];
             DB::table('restaurants')->insert($restaurante);
+            if(!auth()->user()->owner){
+                auth()->user()->update(['owner'=>true]);
+            }
             return $restaurante;
         } else {
             return response()->json(['error' => 'Usuario no autenticado'], 401);
