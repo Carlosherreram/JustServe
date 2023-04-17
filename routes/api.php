@@ -22,16 +22,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //Restaurantes
+//Esta ruta redirige a los métodos crud del controlador de restaurantes a excepción de los métodos getOne y getAll, ya que esta ruta está protegida por sanctum.
 Route::apiResource('/restaurants',RestaurantController::class)
 ->middleware('auth:sanctum')
 ->except(['index','show']);
 
+//Esta ruta dirige a los métodos de getOne y getAll, no requiere autenticación.
 Route::apiResource('/restaurants',RestaurantController::class)
 ->only('show','index');
 
+//Esta ruta redirige hacia el método showMine, el cual muestra todos los restaurante que pertenezcan al usuario autenticado.
 Route::get('/showMine',[RestaurantController::class,'showMine'])
 ->middleware('auth:sanctum');
 
 //User
+//Dos rutas para el controlador de usuarios que sirven para dar de alta un usuario y obtener su token de acceso, y la otra para mediante usuario y contraseña obtener un nuevo token de acceso.
 Route::post('/login',[AuthController::class,'loginUser']);
 Route::post('/register',[AuthController::class,'createUser']);

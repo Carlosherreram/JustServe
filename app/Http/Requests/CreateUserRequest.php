@@ -19,6 +19,8 @@ class CreateUserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
+
+     //Validación de dada de alta de usuario.
     public function rules(): array
     {
         return [

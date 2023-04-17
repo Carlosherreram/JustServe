@@ -19,6 +19,8 @@ class LoginUserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
+
+     //Aquí se valida la petición de inicio de sesión de un usuario.
     public function rules(): array
     {
         return [

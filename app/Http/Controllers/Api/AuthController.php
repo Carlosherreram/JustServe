@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    //En este método se comprueban las credenciales aportadas por el usuario y de ser correctas, se le genera un nuevo token de acceso.
    public function loginUser(LoginUserRequest $loginUser){
     if(!Auth::attempt($loginUser->only(['username','password']))){
         return response()->json([
@@ -29,6 +30,8 @@ class AuthController extends Controller
     }
    }
 
+   /*Este método crea un usuario, comprueba si se ha especificado si es propietario de un restaurante y si no lo es, se pone por defecto en false. Del mismo modo,
+   Establece que el usuario no es administrador, por lo demás utiliza los valores de la request.*/
    public function createUser(CreateUserRequest $createuser){
     if(!$createuser->has('owner')){
             $createuser->merge(['owner' => false]);

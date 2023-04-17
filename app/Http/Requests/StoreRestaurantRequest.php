@@ -19,12 +19,12 @@ class StoreRestaurantRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
+
+     //Aquí se valida la petición para dar de alta un restaurante, y también para actualizarlo.
     public function rules(): array
     {
-        //$foods = ['tradicional', 'burguer','chino','mexicana','italiana','pizza'];
-
         return [
-            'food' => 'required|in:tradicional,burguer,chino,mexicana,italiana,pizza',
+            'food' => 'required|in:tradicional,burguer,chino,mexicana,italiana,pizza,otro',
             'name' => 'required|string|max:45',
             'location' => 'required|string|max:50',
 

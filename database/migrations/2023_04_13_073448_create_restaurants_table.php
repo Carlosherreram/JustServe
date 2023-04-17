@@ -9,6 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+     /*
+     Una migración que crea la tabla de restaurantes en la BBDD, la fk a usuario hace referencia al usuario que será propietario de cada restaurante.
+     */
     public function up(): void
     {
         Schema::create('restaurants', function (Blueprint $table) {
