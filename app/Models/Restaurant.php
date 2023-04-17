@@ -14,6 +14,7 @@ class Restaurant extends Model
         'location',
         'name',
     ];
+    //Relación 1:N entre restaurantes y usuarios.
     public function user(){
         return $this->belongsTo(User::class);
     }

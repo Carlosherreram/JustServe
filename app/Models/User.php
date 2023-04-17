@@ -46,6 +46,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    //Relación 1:N entre restaurantes y usuarios.
     public function restaurants(){
         return $this->hasMany(Restaurant::class);
     }
