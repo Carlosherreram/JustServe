@@ -9,6 +9,10 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+
+     /*
+     La migración de usuarios que genera automáticamente laravel, pero con algunos campos extra añadidos.
+     */
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {

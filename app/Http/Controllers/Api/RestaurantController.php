@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Models\Restaurant;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class RestaurantController extends Controller
@@ -57,9 +56,8 @@ class RestaurantController extends Controller
 
     /**
      * Get restaurants by owner id
+     *Aquí se obtiene una lista de restaurantes que pertenezcan a un mismo propietario.
      */
-
-     //Aquí se obtiene una lista de restaurantes que pertenezcan a un mismo propietario.
      public function showMine(){
         if (auth()->check()) {
         return Restaurant::whereUser_id(auth()->user()->id)->paginate(10,['food','location','name']);
