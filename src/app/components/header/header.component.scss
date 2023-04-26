@@ -1,0 +1,97 @@
+@import "../../../styles.scss";
+
+.navbar {
+  width: 100%;
+  display: flex;
+  margin: 0%;
+  height: max-content;
+  background-color: black;
+  width: 100%;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    ul.menu {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: flex;
+    justify-content: space-between;
+    background-color: $accentColor;
+    width: 50px;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    ul.menu.active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      padding: 1rem;
+    }
+  }
+
+  #nameButton {
+    display: flex;
+    justify-content: center;
+    text-decoration-line: none;
+    color: $mainColor;
+    margin: 1rem;
+  }
+
+  #nameButton:hover {
+    background-color: $accentColor;
+    border-radius: 3px;
+    color: black;
+  }
+
+
+}
+
+ul.menu {
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+  margin-left: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+
+  a {
+    text-decoration-line: none;
+    color: white;
+  }
+
+  :hover {
+    background-color: $accentColor;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+    color: black;
+  }
+
+}
+
+.login {
+  width: 100%;
+  margin-right: 3rem;
+  gap: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-self: center;
+
+  a {
+    text-decoration-line: none;
+    color: white;
+  }
+
+  :hover {
+    background-color: $accentColor;
+    border-radius: 3px;
+    color: black;
+  }
+
+}

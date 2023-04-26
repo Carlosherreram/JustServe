@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: #019272;
+  margin-top: 5%;
+  gap: 1rem;
+  margin-bottom: 20%;
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .reservas {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px #24A8CF;
+    border-radius: 30px;
+  }
+
+  .reserva {
+    display: flex;
+    flex-basis: 50%;
+    /* divide las tarjetas por la mitad */
+    gap: 2rem;
+  }
+
+  .restaurante {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #30DDB7;
+  }
+
+  h2 {
+    width: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: black;
+    overflow-x: hidden;
+    /* evita que el contenido se desplace horizontalmente */
+  }
+
+  .info p {
+    margin: 0;
+  }
+}

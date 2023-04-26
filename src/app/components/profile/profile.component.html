@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="profile">
+    <h2>Bienvenido {{userLog.username}}</h2>
+    <div class="user-info">
+      <img *ngIf="userLog.username === 'DC' " src="../../../assets/panda.jpg" alt="Foto de perfil">
+      <img *ngIf="userLog.username === 'Wallotorm' " src="../../../assets/mono.jpg" alt="Foto de perfil">
+      <div class="user-details">
+        <p>{{userLog.email}}</p>
+      </div>
+    </div>
+    <hr>
+    <div *ngIf="userLog.owner===true" class="restaurante">
+      <h2>Propietario de: {{restaurante.name}}</h2>
+      <h2>Tipo de comida: {{restaurante.food}}</h2>
+      <h2>Tipo de comida: {{restaurante.location}}</h2>
+
+    </div>
+  </div>
+</div>

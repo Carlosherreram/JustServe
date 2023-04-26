@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Registrate</h1>
+  <form (submit)="onSubmit()">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <label for="age">Edad:</label>
+    <input type="number" id="age" name="age" required>
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="owner">
+      Owner:
+      <input type="checkbox" id="owner" name="owner" [(ngModel)]="isOwner" required>
+    </label>
+    <div *ngIf="isOwner">
+      <label for="nameRest">Nombre del restaurante:</label>
+      <input type="text" id="nameRest" name="nameRest" [(ngModel)]="nameRest" placeholder="Nombre del restaurante"
+        required>
+    </div>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="submit" value="Registrarse" (click)="onSubmit()">
+  </form>
+  <div class="notification">
+    <p>{{ MSG }}</p>
+  </div>
+</div>
