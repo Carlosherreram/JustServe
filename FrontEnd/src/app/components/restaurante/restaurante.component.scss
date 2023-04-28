@@ -1,0 +1,51 @@
+@import"../../../styles.scss";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  margin-bottom: 10%;
+
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+    padding: 1rem;
+    background-color: $accentColor;
+    gap: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+
+    .title {
+      display: flex;
+      text-align: center;
+      align-items: flex-start;
+    }
+
+    img {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: space-around;
+      width: 150px;
+      height: 150px;
+    }
+
+    .descriptionCard {
+      display: flex;
+      align-items: flex-start;
+
+      p {
+        margin: 1rem;
+
+      }
+    }
+  }
+}

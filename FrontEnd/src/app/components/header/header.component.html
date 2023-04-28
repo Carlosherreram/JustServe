@@ -1,0 +1,32 @@
+<div class="container">
+  <nav class="navbar">
+    <a id="nameButton" href="home">JustReserve</a>
+    <button class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </button>
+    <ul class="menu">
+      <a routerLink="home">Home</a>
+      <a routerLink="restaurantes">Restaurantes</a>
+      <a *ngIf="authService.isLoggedIn" routerLink="reservas">Mis Reservas</a>
+    </ul>
+    <div class="login">
+      <a routerLink="login" *ngIf="!authService.isLoggedIn" (click)="enviarLogReg(true)">
+        Inicio de Sesión
+      </a>
+      <a (click)="enviarLogReg(false)" routerLink="login" *ngIf="!authService.isLoggedIn">
+        Resgistrarme
+      </a>
+      <a routerLink="profile" *ngIf="authService.isLoggedIn">
+        Perfil
+      </a>
+      <a routerLink="login" *ngIf="authService.isLoggedIn" (click)="logOut()">
+        Log Out
+      </a>
+    </div>
+
+
+  </nav>
+
+</div>

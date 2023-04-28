@@ -1,0 +1,45 @@
+<div class="container">
+  <!-- <div class="card" *ngFor="let restaurante of restaurantes"> -->
+  <!-- (click)="selectedRestaurante = restaurante" -->
+  <!-- <div *ngIf="!selectedRestaurante"> -->
+  <div class="card" *ngFor="let restaurante of restaurantes">
+    <!-- (click)="selectedRestaurante = restaurante"> -->
+    <div class="title-container">
+      <h3 class="title">
+        {{restaurante.name.charAt(0).toUpperCase()+restaurante.name.slice(1)}}
+      </h3>
+    </div>
+    <div class="logo" *ngIf="restaurante.food == 'burguer'">
+      <img src="../../../assets/buguer.jpg" />
+    </div>
+    <div class="logo" *ngIf="restaurante.food == 'china'">
+      <img src="../../../assets/china.jpg" />
+    </div>
+    <div class="logo" *ngIf="restaurante.food == 'italiana'">
+      <img src="../../../assets/pizza.jpg" />
+    </div>
+    <div class="logo" *ngIf="restaurante.food == 'mexicana'">
+      <img src="../../../assets/mexicana.jpg" />
+    </div>
+    <div class="logo" *ngIf="restaurante.food == 'tradicional'">
+      <img src="../../../assets/tradicional.jpg" />
+    </div>
+    <div class="descriptionCard">
+      <p>
+        Tipo de comida: {{restaurante.food.charAt(0).toUpperCase()+restaurante.food.slice(1)}}
+      </p>
+      <p>
+        Localidad: {{restaurante.location.charAt(0).toUpperCase()+restaurante.location.slice(1)}}
+      </p>
+    </div>
+  </div>
+</div>
+<!-- <div *ngIf="selectedRestaurante">
+      <h3>{{selectedRestaurante.name}}</h3>
+      <p>{{selectedRestaurante.food}}</p>
+      <p>{{selectedRestaurante.location}}</p>
+      Numero de personas para la reserva<input type="number">
+    </div> -->
+<!-- </div> -->
+
+<!-- </div> -->

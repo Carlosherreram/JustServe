@@ -1,0 +1,23 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { profile } from 'console';
+import { ProfileComponent } from 'src/app/components/profile/profile.component';
+import { ReservaComponent } from 'src/app/components/reserva/reserva.component';
+import { HomeComponent } from 'src/app/pages/home/home.component';
+import { LoginPageComponent } from 'src/app/pages/login-page/login-page.component';
+import { RestaurantesComponent } from 'src/app/pages/restaurantes/restaurantes.component';
+
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'restaurantes', component: RestaurantesComponent },
+  { path: 'reservas', component: ReservaComponent },
+  { path: 'login', component: LoginPageComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: '', component: HomeComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

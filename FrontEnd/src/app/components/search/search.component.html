@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="find">
+    <h3>Buscar por tipo de comida o localidad</h3>
+    <div class="options">
+      <!-- Formulario con el select del food -->
+      <form class="food">
+        <p>Tipo de comida</p>
+        <select name="food" [(ngModel)]="foodSelect">
+          <option value="" disabled selected hidden>Selecciona un tipo de comida</option>
+          <option *ngFor="let food of totalFood" [value]="food">{{food}}</option>
+          <option value="">Limpiar campo</option>
+        </select>
+      </form>
+      <!-- Formulario con el select de location -->
+      <form class="location">
+        <p>Localidad</p>
+        <select name="location" [(ngModel)]="locationSelect">
+          <option value="" disabled selected hidden>Selecciona localidad</option>
+          <option *ngFor="let location of totalLocations" [value]="location">{{location}}</option>
+          <option value="">Limpiar campo</option>
+        </select>
+      </form>
+    </div>
+    <!-- Boton para buscar segun los campos seleccionados anteriormente -->
+    <button type="submit" (click)="getCombi(foodSelect,locationSelect)">Buscar</button>
+  </div>
+  <div class="notification">
+    <p>{{ MSG }}</p>
+  </div>
+
+  <!-- Resultado de la anterior busqueda -->
+  <div class="searchRestaurantes" *ngIf="searchRestaurantes">
+    <div class="card" *ngFor="let restaurante of searchRestaurantes">
+      <h3 class="title">{{restaurante.name.charAt(0).toUpperCase()+restaurante.name.slice(1)}}</h3>
+      <div class="descriptionCard">
+        <p>Tipo de comida: {{restaurante.food.charAt(0).toUpperCase()+restaurante.food.slice(1)}}</p>
+        <p>Localidad: {{restaurante.location.charAt(0).toUpperCase()+restaurante.location.slice(1)}}</p>
+      </div>
+    </div>
+  </div>

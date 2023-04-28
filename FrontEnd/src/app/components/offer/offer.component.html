@@ -1,0 +1,12 @@
+<h4>RESTAURANTES CON OFERTAS</h4>
+<div class="container" *ngIf="offerRestaurantes">
+  <div class="card" *ngFor="let restaurante of offerRestaurantes">
+    <h3 class="title">{{restaurante.name.charAt(0).toUpperCase()+restaurante.name.slice(1)}}
+      <img src="../../../assets/buguer.jpg" class="logo" />
+    </h3>
+    <div class="descriptionCard">
+      <p>Tipo de comida: {{restaurante.food.charAt(0).toUpperCase()+restaurante.food.slice(1)}}</p>
+      <p>Localidad: {{restaurante.location.charAt(0).toUpperCase()+restaurante.location.slice(1)}}</p>
+    </div>
+  </div>
+</div>
