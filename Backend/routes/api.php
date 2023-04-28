@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\RestaurantController;
+use App\Http\Controllers\Api\BookingController;
+use App\Http\Controllers\Api\TableController;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +22,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Tables
+Route::apiResource('/tables',TableController::class)
+->only('show','index');
+//Reservas
+Route::apiResource('/bookings',BookingController::class)->middleware('auth:sanctum');
 
 //Restaurantes
 //Esta ruta redirige a los métodos crud del controlador de restaurantes a excepción de los métodos getOne y getAll, ya que esta ruta está protegida por sanctum.

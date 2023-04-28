@@ -22,4 +22,7 @@ class Restaurant extends Model
     public function menu(){
         return $this->hasOne(Menu::class);
     }
+    public function tables(){
+        return $this->hasmany(Table::class);
+    }
 }
