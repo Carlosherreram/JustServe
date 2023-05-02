@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateTableRequest;
 use App\Models\Restaurant;
 use App\Models\Table;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TableController extends Controller
 {
@@ -20,9 +22,17 @@ class TableController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateTableRequest $request)
     {
-        //
+        $table = [
+            'restaurant_id' => $request->restaurant_id,
+            'capacidad' => $request->capacidad,
+            'terraza' => $request->terraza,
+            'user_id' => auth()->user()->id,
+            'created_at' => now()
+        ];
+        DB::table('tables')->insert($table);
+        return response()->json(['message' => 'Mesa creada'], 201);
     }
 
     /**
@@ -30,7 +40,7 @@ class TableController extends Controller
      */
     public function show(Table $table)
     {
-        //
+        return Table::whereId($table->id)->first();
     }
 
     /**

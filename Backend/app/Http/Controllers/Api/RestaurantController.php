@@ -42,7 +42,7 @@ class RestaurantController extends Controller
             
             return $restaurante;
         } else {
-            return response()->json(['error' => 'Usuario no autenticado'], 401);
+            return response()->json(['error' => 'Usuario no identificado'], 401);
         }
 
     }
@@ -65,7 +65,7 @@ class RestaurantController extends Controller
         return Restaurant::whereUser_id(auth()->user()->id)->paginate(10,['food','location','name']);
         }
         else {
-            return response()->json(['error' => 'Usuario no autenticado'], 401);
+            return response()->json(['error' => 'Usuario no identificado'], 401);
         }
     } 
      
@@ -90,7 +90,7 @@ class RestaurantController extends Controller
         }
 
         else {
-            return response()->json(['error' => 'Usuario no autenticado'], 401);
+            return response()->json(['error' => 'Usuario no identificado'], 401);
         }
     }
 
