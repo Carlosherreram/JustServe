@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
+use App\Http\Resources\RestaurantResource;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\DB;
 
@@ -54,6 +55,7 @@ class RestaurantController extends Controller
     public function show(Restaurant $restaurant)
     {
         return Restaurant::whereName($restaurant->name)->first(['food', 'location', 'name']);
+      
     }
 
     /**

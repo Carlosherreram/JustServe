@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('capacidad');
             $table->boolean('terraza');
             $table->foreignId('restaurant_id');
+            $table->string('identificacionLocal');
         });
     }
 

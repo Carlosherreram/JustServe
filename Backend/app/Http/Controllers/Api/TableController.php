@@ -28,6 +28,7 @@ class TableController extends Controller
             'restaurant_id' => $request->restaurant_id,
             'capacidad' => $request->capacidad,
             'terraza' => $request->terraza,
+            'identificacionlocal'=>$request->identificacionlocal,
             'user_id' => auth()->user()->id,
             'created_at' => now()
         ];
@@ -56,6 +57,8 @@ class TableController extends Controller
      */
     public function destroy(Table $table)
     {
-        //
+        if(Restaurant::where('restaurant_id',$table->restaurant_id)->user_id == auth()->user()->id){
+            return $table->delete();
+        }
     }
 }

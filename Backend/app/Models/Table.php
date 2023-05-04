@@ -12,6 +12,7 @@ class Table extends Model
     protected $fillable = [
         'capacidad',
         'terraza',
+        'identificacionlocal',
     ];
 
     public function bookings(){

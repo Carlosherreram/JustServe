@@ -28,7 +28,8 @@ class CreateTableRequest extends FormRequest
         return [
             'restaurant_id' => ['required',Rule::exists('restaurants', 'id')],
             'capacidad' => 'required|integer',
-            'terraza' => 'boolean'
+            'terraza' => 'boolean',
+            'identificacionlocal'=>'string',
         ];
     }
 }
