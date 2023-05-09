@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\MenuController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\BookingController;
 use App\Http\Controllers\Api\TableController;
@@ -23,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+//Menu
+Route::apiResource('/menu',MenuController::class);
 //Tables
 Route::apiResource('/tables',TableController::class)
 ->only('show','index');

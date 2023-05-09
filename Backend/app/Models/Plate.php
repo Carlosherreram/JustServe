@@ -12,9 +12,11 @@ class Plate extends Model
     protected $fillable = [
         'name',
         'description',
+        'categorie'
+
     ];
 
-    public function category(){
-        return $this->belongsTo(Category::class);
+    public function menu(){
+        return $this->belongsTo(Menu::class);
     }
 }

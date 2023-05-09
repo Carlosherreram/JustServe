@@ -12,7 +12,7 @@ class Menu extends Model
     public function restaurant(){
         return $this->belongsTo(Restaurant::class);
     }
-    public function categories(){
-        return $this->hasMany(Category::class);
+    public function plates(){
+        return $this->hasMany(Plate::class);
     }
 }
