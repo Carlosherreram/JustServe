@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateBookingRequest;
+use App\Http\Requests\TablesAvailableRequest;
 use App\Http\Requests\UpdateBookingRequest;
 use App\Models\Booking;
+use App\Models\Table;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +21,34 @@ class BookingController extends Controller
         if (auth()->check()) {
             return Booking::paginate(10)->where('user_id', auth()->user()->id);
         }
+    }
+
+    /**
+     * Display a listing of available tables
+     */
+    public function tablesAvailable(TablesAvailableRequest $request){
+        $tables = Table::where('restaurant_id', $request->restaurant_id)->get();
+        $bookings = Booking::where('table_id', $request->table_id)
+            ->where('date', '=', $request->date)
+            ->where('start_time', '<=', $request->end_time)
+            ->where('end_time', '>=', $request->start_time)
+            ->get();
+        $tablesAvailable = collect();
+
+        foreach($tables as $table) {
+            $available = true;
+
+            foreach ($bookings as $booking) {
+                if ($table->id == $booking->table_id) {
+                    $available = false;
+                    break;
+                }
+            }
+            if($available){
+                $tablesAvailable->push($table);
+            }
+        }
+        return $tablesAvailable->toJson();
     }
 
     /**

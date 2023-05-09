@@ -28,6 +28,8 @@ Route::apiResource('/tables',TableController::class)
 ->only('show','index');
 //Reservas
 Route::apiResource('/bookings',BookingController::class)->middleware('auth:sanctum');
+//Esta ruta devuelve un json con las mesas disponibles a partir de restaurant_id, start_time, end_time y date 
+Route::get('/available',[BookingController::class,'tablesAvailable']);
 
 //Restaurantes
 //Esta ruta redirige a los métodos crud del controlador de restaurantes a excepción de los métodos getOne y getAll, ya que esta ruta está protegida por sanctum.
