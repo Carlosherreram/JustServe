@@ -30,25 +30,20 @@ class BookingController extends Controller
     {
         $tables = Table::where('restaurant_id', $request->restaurant_id)->get();
 
-        $tablesAvailable = collect();
+        $available = collect();
 
         foreach ($tables as $table) {
-            $available = true;
             $bookings = Booking::where('table_id', $table->id)
                 ->where('date', '=', $request->date)
                 ->where('start_time', '<=', $request->end_time)
                 ->where('end_time', '>=', $request->start_time)
                 ->get();
 
-                if (!$bookings->isEmpty()) {
-                    $available = false; 
-                }
-            
-            if ($available) {
-                $tablesAvailable->push($table);
+            if ($bookings->isEmpty()) {
+                $available->push($table);
             }
         }
-        return $tablesAvailable->toJson();
+        return $available->toJson();
     }
 
     /**
