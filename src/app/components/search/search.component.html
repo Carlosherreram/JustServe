@@ -31,7 +31,8 @@
 
   <!-- Resultado de la anterior busqueda -->
   <div class="searchRestaurantes" *ngIf="searchRestaurantes">
-    <div class="card" *ngFor="let restaurante of searchRestaurantes">
+    <div class="card" *ngFor="let restaurante of searchRestaurantes" routerLink="selectRestaurante"
+      (click)="restauranteService.selectRestaurante(restaurante)">
       <h3 class="title">{{restaurante.name.charAt(0).toUpperCase()+restaurante.name.slice(1)}}</h3>
       <div class="descriptionCard">
         <p>Tipo de comida: {{restaurante.food.charAt(0).toUpperCase()+restaurante.food.slice(1)}}</p>

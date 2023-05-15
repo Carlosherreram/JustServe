@@ -6,46 +6,91 @@
   justify-content: center;
   gap: 1rem;
   padding: 2rem;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
 
-  .card {
+  .cartaComida {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-radius: 10px;
-    height: 300px;
-    width: 300px;
-    padding: 1rem;
-    background-color: $accentColor;
+    width: 500px;
+    height: 750px;
+    background-color: bisque;
     gap: 1rem;
-    overflow: hidden;
-    cursor: pointer;
 
-    .title {
+    h2 {
       display: flex;
-      text-align: center;
-      align-items: flex-start;
+      justify-content: center;
+      margin-top: 2rem;
     }
 
-    img {
-      display: flex;
-      margin-top: 1rem;
-      justify-content: space-around;
-      width: 150px;
-      height: 150px;
+    h3 {
+      margin-left: 1rem;
     }
 
-    .descriptionCard {
+    p {
       display: flex;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-left: 2rem;
+    }
 
-      p {
-        margin: 1rem;
+  }
 
+  .seletedRestaurant {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 3rem;
+  }
+
+  .cardRestaurants {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 10px;
+      height: 300px;
+      width: 300px;
+      padding: 1rem;
+      background-color: $accentColor;
+      gap: 1rem;
+      overflow: hidden;
+      cursor: pointer;
+
+      .title {
+        display: flex;
+        text-align: center;
+        align-items: flex-start;
+      }
+
+      img {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: space-around;
+        width: 150px;
+        height: 150px;
+      }
+
+      .descriptionCard {
+        display: flex;
+        align-items: flex-start;
+
+        p {
+          margin: 1rem;
+
+        }
       }
     }
+
   }
+
 }

@@ -20,6 +20,7 @@ import { ReservaComponent } from './components/reserva/reserva.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { ReservaService } from 'src/app/services/reserva.service';
+import { SelectedRestaurantComponent } from './components/selected-restaurant/selected-restaurant.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ReservaService } from 'src/app/services/reserva.service';
     LoginPageComponent,
     ProfileComponent,
     ReservaComponent,
-    FooterComponent
+    FooterComponent,
+    SelectedRestaurantComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,7 @@ import { ReservaService } from 'src/app/services/reserva.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [RestauranteService, DataService, AuthService, ReservaService],
+  providers: [RestauranteService, DataService, AuthService, ReservaService, RestauranteComponent, SelectedRestaurantComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

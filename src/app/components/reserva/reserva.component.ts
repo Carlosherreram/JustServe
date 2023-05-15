@@ -26,14 +26,11 @@ export class ReservaComponent implements OnInit {
   }
 
   private checkUserReserve(): void {
-    console.log('X')
     if (this.authService.userLogged) {
-      console.log('USER LOGGED')
       this.reservas = this.reservas.filter(reserva =>
-        reserva.userName === this.authService.userLogged[0].username
+        reserva.userName === this.authService.userLogged[0].name
       );
     }
-    console.log(this.reservas)
   }
 
 

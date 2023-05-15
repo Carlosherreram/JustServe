@@ -7,12 +7,4 @@
     <input type="password" id="password" name="password" [(ngModel)]="password" required>
     <input type="submit" value="Iniciar Sesión" (click)="loginUser(email, password)">
   </form>
-
-  <div *ngFor="let item of usersBBDD">
-    {{item.name}}
-    {{item.username}}
-    {{item.email}}
-    {{item.password}}
-  </div>
-
 </div>

@@ -8,7 +8,7 @@
     </button>
     <ul class="menu">
       <a routerLink="home">Home</a>
-      <a routerLink="restaurantes">Restaurantes</a>
+      <a (click)="this.restauranteService.cleanSelected()" routerLink="restaurantes">Restaurantes</a>
       <a *ngIf="authService.isLoggedIn" routerLink="reservas">Mis Reservas</a>
     </ul>
     <div class="login">

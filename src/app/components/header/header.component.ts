@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RestauranteComponent } from 'src/app/components/restaurante/restaurante.component';
 import { AuthService } from 'src/app/services/auth.service';
+import { RestauranteService } from 'src/app/services/restaurante.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,9 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService,
+    public restauranteService: RestauranteService
+  ) { }
 
   ngOnInit(): void {
     const hamburger = document.querySelector('.hamburger');
@@ -33,4 +37,5 @@ export class HeaderComponent implements OnInit {
   logOut() {
     this.authService.isLoggedIn = false;
   }
+
 }

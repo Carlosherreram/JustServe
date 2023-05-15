@@ -1,0 +1,251 @@
+@import"../../../styles.scss";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  margin-bottom: 10%;
+
+  .reserve {
+    grid-area: dateMesas;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-right: 4rem;
+
+  }
+
+  .mesas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    margin-top: 4rem;
+    height: 50%;
+
+    .mesa {
+      display: flex;
+      justify-content: center;
+      justify-self: center;
+      border-radius: 1rem;
+      text-align: center;
+      align-items: center;
+      width: 70%;
+      height: 90%;
+      background-color: burlywood;
+    }
+  }
+
+  .dateReserve {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .searchTable {
+    background: $accentColor;
+    color: black;
+    border-radius: 2rem;
+    width: 6rem;
+    height: 3rem;
+
+    &:hover {
+      background-color: $mainColor;
+    }
+
+
+  }
+
+  .hourSelect {
+    display: flex;
+    text-align: center;
+    border-radius: 2rem;
+    box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
+    background-color: $accentColor;
+    height: 3rem;
+    width: 8rem;
+
+    option:hover {
+      background-color: $shadows;
+    }
+
+  }
+
+  .tradicional {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.05rem;
+  }
+
+  .reserveButton {
+    display: flex;
+    background-color: $accentColor;
+    border-radius: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    height: 6rem;
+    width: 100%;
+    font-size: 1.5rem;
+
+    &:hover {
+      box-shadow: 0 0 5px $accentColor,
+        0 0 25px $accentColor,
+        0 0 50px $accentColor,
+        0 0 100px $accentColor;
+    }
+  }
+
+
+  .cartaComida {
+    grid-area: carta;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    flex-wrap: nowrap;
+    width: 600px;
+    height: 650px;
+    background-color: bisque;
+    gap: 2rem;
+
+    .burguers {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      font-size: 1.5rem;
+      height: 100%;
+    }
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+
+    p {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      margin-left: 2rem;
+    }
+
+  }
+
+  .calendar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 4rem;
+    background-color: $accentColor;
+    margin-bottom: 2rem;
+    justify-items: stretch;
+    align-items: stretch;
+
+    .weekly {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1rem;
+      margin-right: 1rem;
+
+      button {
+        width: 100%;
+        height: 80%;
+        background-color: $accentColor;
+        border: $accentColor;
+
+        &:hover {
+          background-color: aquamarine;
+        }
+
+        &:active {
+          background-color: aqua;
+        }
+      }
+    }
+  }
+
+  .cartaContent {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 75%;
+  }
+
+  .seletedRestaurant {
+    display: grid;
+    grid-template-areas: "restaurante carta carta dateMesas";
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8rem;
+  }
+
+  .cardRestaurants {
+    grid-area: restaurante;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 10px;
+      height: 300px;
+      width: 300px;
+      padding: 1rem;
+      background-color: $accentColor;
+      gap: 1rem;
+      overflow: hidden;
+      cursor: pointer;
+
+      .title {
+        display: flex;
+        text-align: center;
+        align-items: flex-start;
+      }
+
+      img {
+        display: flex;
+        margin-top: 1rem;
+        justify-content: space-around;
+        width: 150px;
+        height: 150px;
+      }
+
+      .descriptionCard {
+        display: flex;
+        align-items: flex-start;
+
+        p {
+          margin: 1rem;
+
+        }
+      }
+    }
+
+  }
+
+
+}

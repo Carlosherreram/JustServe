@@ -11,11 +11,14 @@ export class RestauranteService {
 
   public searchRestaurantes: Restaurante[] = []
 
+  public selectedRestaurante: Restaurante | null = null;
+
+
   constructor(private data: DataService) {
     this.loadRestaurante()
   }
 
-  loadRestaurante() {
+  public loadRestaurante() {
     this.data.getRestaurantes().subscribe((res: Restaurante[]) => {
       this.restaurantes.next(res)
     })
@@ -25,6 +28,13 @@ export class RestauranteService {
     return this.data.getRestaurantes();
   }
 
+  public selectRestaurante(restaurante: Restaurante): void {
+    this.selectedRestaurante = restaurante;
+  }
+
+  public cleanSelected(): void {
+    this.selectedRestaurante = null
+  }
 
 
 

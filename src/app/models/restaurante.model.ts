@@ -1,8 +1,8 @@
-import { User } from "src/app/models/users.model";
+import { Carta } from "src/app/models/carta.model";
 
 export interface Restaurante {
-  name: string;
-  food: string;
-  location: string;
-  owner?: string;
+  name: string,
+  food: string,
+  location: string,
+  owner?: string,
 }

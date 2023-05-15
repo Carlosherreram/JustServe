@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 import { Restaurante } from 'src/app/models/restaurante.model';
 import { User } from 'src/app/models/users.model';
 import { Reserva } from 'src/app/models/reserva.model';
+import { Carta } from 'src/app/models/carta.model';
+import { Mesa } from 'src/app/models/mesas.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,31 +15,53 @@ export class DataService {
   public restaurantes: Restaurante[] = []
   public users: User[] = []
 
-
   constructor(private http: HttpClient) {
-    this.getUsers().subscribe((users: User[]) => { this.users = users })
+    this.getUsers().subscribe((users: User[]) => { this.users = users });
+    this.getRestaurantes().subscribe((restaurantes: Restaurante[]) => { this.restaurantes = restaurantes });
+  }
+
+  public getCartas(): Observable<Carta[]> {
+    return this.http.get<Carta[]>('../assets/db.json')
+      .pipe(
+        map((data: any) => data.Carta)
+      );
+  }
+
+  public getMesas(): Observable<Mesa[]> {
+    return this.http.get<Mesa[]>('../assets/db.json')
+      .pipe(
+        map((data: any) => data.Mesas)
+      );
   }
 
   public getRestaurantes(): Observable<Restaurante[]> {
-    return this.http.get<Restaurante[]>
-      ('https://justreserve-40e6a-default-rtdb.firebaseio.com/restaurantes.json')
-
+    return this.http.get<Restaurante[]>('../assets/db.json')
+      .pipe(
+        map((data: any) => data.restaurantes)
+      );
   }
+
   public getReserves(): Observable<Reserva[]> {
-    return this.http.get<Reserva[]>
-      ('https://justreserve-40e6a-default-rtdb.firebaseio.com/reservas.json')
-
+    return this.http.get<Reserva[]>('../assets/db.json')
+      .pipe(
+        map((data: any) => data.reservas)
+      );
   }
+
   public getUsers(): Observable<User[]> {
-    return this.http.get<User[]>
-      ('https://justreserve-40e6a-default-rtdb.firebaseio.com/users.json')
+    return this.http.get<User[]>('../assets/db.json')
+      .pipe(
+        map((data: any) => data.users)
+      );
+  }
 
-  }
   public postUsers(user: User): Observable<User> {
-    return this.http.put<User>(
-      'https://justreserve-40e6a-default-rtdb.firebaseio.com/users/'
-      + this.users.length + '.json', user);
+    const newId = this.users.length + 1;
+    const newUser = { ...user, id: newId };
+    this.users.push(newUser);
+    return of(newUser);
   }
+
 
 
 

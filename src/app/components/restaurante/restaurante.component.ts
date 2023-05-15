@@ -10,10 +10,14 @@ import { RestauranteService } from 'src/app/services/restaurante.service';
 export class RestauranteComponent {
   public restaurantes: Restaurante[] = [];
   public selectedRestaurante: Restaurante | null = null;
+  public showSelectedRestaurante: Restaurante[] = [];
 
-  constructor(private restaurantesService: RestauranteService) { }
+  constructor(public restaurantesService: RestauranteService,
+  ) { }
 
   ngOnInit(): void {
+
+
     this.restaurantesService.showRestaurantes().subscribe((rest: Restaurante[]) => {
       this.restaurantes = rest.sort((a, b) => {
         if (a.name < b.name) {
@@ -26,9 +30,5 @@ export class RestauranteComponent {
       });
     });
 
-  }
-
-  selectRestaurante(restaurante: Restaurante): void {
-    this.selectedRestaurante = restaurante;
   }
 }

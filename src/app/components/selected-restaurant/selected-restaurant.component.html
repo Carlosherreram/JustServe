@@ -1,0 +1,101 @@
+<div class="container">
+  <div *ngIf="selectedRestaurante" class="seletedRestaurant">
+    <div class="cardRestaurants">
+      <div>
+        <div class="card">
+          <div class="title-container">
+            <h3 class="title">{{selectedRestaurante.name.charAt(0).toUpperCase()+selectedRestaurante.name.slice(1)}}
+            </h3>
+          </div>
+          <div class="logo" *ngIf="selectedRestaurante.food == 'burguer'">
+            <img src="../../../assets/buguer.jpg" />
+          </div>
+          <div class="logo" *ngIf="selectedRestaurante.food == 'china'">
+            <img src="../../../assets/china.jpg" />
+          </div>
+          <div class="logo" *ngIf="selectedRestaurante.food == 'italiana'">
+            <img src="../../../assets/pizza.jpg" />
+          </div>
+          <div class="logo" *ngIf="selectedRestaurante.food == 'mexicana'">
+            <img src="../../../assets/mexicana.jpg" />
+          </div>
+          <div class="logo" *ngIf="selectedRestaurante.food == 'tradicional'">
+            <img src="../../../assets/tradicional.jpg" />
+          </div>
+          <div class="descriptionCard">
+            <p>Tipo de comida: {{selectedRestaurante.food.charAt(0).toUpperCase()+selectedRestaurante.food.slice(1)}}
+            </p>
+            <p>Localidad: {{selectedRestaurante.location.charAt(0).toUpperCase()+selectedRestaurante.location.slice(1)}}
+            </p>
+          </div>
+        </div>
+        <div>
+          <button class="reserveButton" type="submit">Reservar</button>
+        </div>
+      </div>
+    </div>
+    <div class="cartaComida">
+      <h2>CARTA</h2>
+      <div class="cartaContent">
+        <div *ngIf="selectedRestaurante.food == 'tradicional'" class="tradicional">
+          <h3>Menu:</h3>
+          <p *ngFor=" let Menu of carta[0]?.Menu">{{Menu}}</p>
+          <h3>Entrantes:</h3>
+          <p *ngFor=" let entrante of carta[0]?.Entrantes">{{entrante}}</p>
+          <h3>Pescados:</h3>
+          <p *ngFor=" let pescado of carta[0]?.Pescados">{{pescado}}</p>
+          <h3>Carnes:</h3>
+          <p *ngFor=" let carne of carta[0]?.Carnes">{{carne}}</p>
+          <h3>Cuchara:</h3>
+          <p *ngFor=" let cuchara of carta[0]?.Cuchara">{{cuchara}}</p>
+          <h3>Postres:</h3>
+          <p *ngFor=" let postre of carta[0]?.Postres">{{postre}}</p>
+          <h3>Bebidas:</h3>
+          <p *ngFor=" let bebida of carta[0]?.Bebidas">{{bebida}}</p>
+        </div>
+
+        <div *ngIf=" selectedRestaurante.food=='burguer'" class=" burguers">
+          <h3 style="text-align: center;">Burgers:</h3>
+          <p *ngFor="let burguer of carta[0]?.Buguers" style="text-align: center;">{{burguer}}</p>
+        </div>
+        <div *ngIf=" selectedRestaurante.food=='italiana'" class=" burguers">
+          <h3 style="text-align: center;">Italian:</h3>
+          <p *ngFor="let pizza of carta[0]?.Italiana" style="text-align: center;">{{pizza}}</p>
+        </div>
+        <div *ngIf=" selectedRestaurante.food=='china'" class=" burguers">
+          <h3 style="text-align: center;">Chinese:</h3>
+          <p *ngFor="let chino of carta[0]?.Chino" style="text-align: center;">{{chino}}</p>
+        </div>
+        <div *ngIf=" selectedRestaurante.food=='mexicana'" class=" burguers">
+          <h3 style="text-align: center;">Mexican:</h3>
+          <p *ngFor="let mex of carta[0]?.Mexicana" style="text-align: center;">{{mex}}</p>
+        </div>
+      </div>
+
+    </div>
+    <div class="reserve">
+      <div class="calendar">
+        <div class="weekly" *ngFor="let day of days">
+          <button class="calendarWeekly" type="submit" value="{{day}}">{{day}}</button>
+        </div>
+
+      </div>
+      <div class="dateReserve">
+        <div class="hourReserve">
+          <select class="hourSelect" name="hour" [(ngModel)]="hour">
+            <option value="" disabled selected hidden>Horas de comida</option>
+            <option *ngFor="let hour of hours" [value]="hour">{{hour}}</option>
+            <option value="">Limpiar campo</option>
+          </select>
+        </div>
+        <button class="searchTable" type="submit">Buscar</button>
+      </div>
+      <div class="mesas">
+        <div class="mesa" *ngFor="let mesa of mesas">
+          Id de las mesas: {{mesa.id}}
+          Numero de comensales: {{mesa.comensales}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

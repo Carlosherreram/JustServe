@@ -1,0 +1,509 @@
+{
+  "reservas": [
+    {
+      "date": "2020-11-10",
+      "nameRestaurante": "Burger Mafia",
+      "numPers": 2,
+      "userName": "Huber"
+    },
+    {
+      "date": "2023-06-10",
+      "nameRestaurante": "Es Fornet de Sineu",
+      "numPers": 2,
+      "userName": "Huber"
+    },
+    {
+      "date": "2022-05-15",
+      "nameRestaurante": "La Piazzetta",
+      "numPers": 3,
+      "userName": "Huber"
+    },
+    {
+      "date": "2022-05-12",
+      "nameRestaurante": "La Cucina",
+      "numPers": 2,
+      "userName": "Sandro"
+    },
+    {
+      "date": "2022-05-14",
+      "nameRestaurante": "Il Tano",
+      "numPers": 3,
+      "userName": "Sandro"
+    },
+    {
+      "date": "2022-05-18",
+      "nameRestaurante": "Celler Ca'n Amer",
+      "numPers": 4,
+      "userName": "Sandro"
+    },
+    {
+      "date": "2024-03-13",
+      "nameRestaurante": "Burger Mafia",
+      "numPers": 2,
+      "userName": "Toto"
+    },
+    {
+      "date": "2023-08-14",
+      "nameRestaurante": "Pizzeria di Mario",
+      "numPers": 4,
+      "userName": "Toto"
+    },
+    {
+      "date": "2021-02-17",
+      "nameRestaurante": "Es Cactus",
+      "numPers": 3,
+      "userName": "Toto"
+    },
+    {
+      "date": "2022-12-12",
+      "nameRestaurante": "Burger Mafia",
+      "numPers": 2,
+      "userName": "Alfa"
+    },
+    {
+      "date": "2023-04-20",
+      "nameRestaurante": "La Piazzetta",
+      "numPers": 3,
+      "userName": "Alfa"
+    },
+    {
+      "date": "2023-04-22",
+      "nameRestaurante": "Es Fornet de Sineu",
+      "numPers": 4,
+      "userName": "Alfa"
+    },
+    {
+      "date": "2023-08-10",
+      "nameRestaurante": "Restaurante Gran Muralla",
+      "numPers": 2,
+      "userName": "Andrea"
+    },
+    {
+      "date": "2023-05-13",
+      "nameRestaurante": "Taco Loco",
+      "numPers": 3,
+      "userName": "Andrea"
+    },
+    {
+      "date": "2022-02-16",
+      "nameRestaurante": "The Taco Shop",
+      "numPers": 4,
+      "userName": "Andrea"
+    },
+    {
+      "date": "2023-07-04",
+      "nameRestaurante": "Il Tano",
+      "numPers": 2,
+      "userName": "Paula"
+    },
+    {
+      "date": "2023-02-19",
+      "nameRestaurante": "Dragon Rojo",
+      "numPers": 3,
+      "userName": "Paula"
+    },
+    {
+      "date": "2021-05-11",
+      "nameRestaurante": "Il Tano",
+      "numPers": 5,
+      "userName": "Paula"
+    }
+  ],
+  "restaurantes": [
+    {
+      "food": "italiana",
+      "id": 1,
+      "location": "Palma",
+      "name": "Pizzeria Toni"
+    },
+    {
+      "food": "china",
+      "id": 2,
+      "location": "Palma",
+      "name": "Restaurante Gran Muralla"
+    },
+    {
+      "food": "burguer",
+      "id": 3,
+      "location": "Palma",
+      "name": "Burger Mafia"
+    },
+    {
+      "food": "tradicional",
+      "id": 4,
+      "location": "Sóller",
+      "name": "Es Fasser"
+    },
+    {
+      "food": "italiana",
+      "id": 5,
+      "location": "Palma",
+      "name": "Il Tano"
+    },
+    {
+      "food": "mexicana",
+      "id": 6,
+      "location": "Palma",
+      "name": "Tijuana Tex Mex"
+    },
+    {
+      "food": "burguer",
+      "id": 7,
+      "location": "Palma",
+      "name": "Sa Cranca"
+    },
+    {
+      "food": "italiana",
+      "id": 8,
+      "location": "Palma",
+      "name": "Pizza Pino"
+    },
+    {
+      "food": "italiana",
+      "id": 9,
+      "location": "Alcudia",
+      "name": "Osteria El Patio"
+    },
+    {
+      "food": "tradicional",
+      "id": 10,
+      "location": "Palma",
+      "name": "Como en casa"
+    },
+    {
+      "food": "tradicional",
+      "id": 11,
+      "location": "Llucmajor",
+      "name": "Ca's Xorc"
+    },
+    {
+      "food": "burguer",
+      "id": 12,
+      "location": "Palma",
+      "name": "Can Brondo"
+    },
+    {
+      "food": "italiana",
+      "id": 13,
+      "location": "Palma",
+      "name": "La Cucina"
+    },
+    {
+      "food": "mexicana",
+      "id": 14,
+      "location": "Palma",
+      "name": "Santi Tacos"
+    },
+    {
+      "food": "tradicional",
+      "id": 15,
+      "location": "Inca",
+      "name": "Celler Ca'n Amer"
+    },
+    {
+      "food": "italiana",
+      "id": 16,
+      "location": "Palma",
+      "name": "La Piazzetta"
+    },
+    {
+      "food": "burguer",
+      "id": 17,
+      "location": "Palma",
+      "name": "The Meat Market"
+    },
+    {
+      "food": "mexicana",
+      "id": 18,
+      "location": "Palma",
+      "name": "The Taco Shop"
+    },
+    {
+      "food": "tradicional",
+      "id": 19,
+      "location": "Sineu",
+      "name": "Es Fornet de Sineu"
+    },
+    {
+      "food": "italiana",
+      "id": 20,
+      "location": "Palma",
+      "name": "Gusto Italiano"
+    },
+    {
+      "food": "tradicional",
+      "id": 21,
+      "location": "cala millor",
+      "name": "Es Cactus"
+    },
+    {
+      "food": "mexicana",
+      "id": 22,
+      "location": "santa ponça",
+      "name": "Taco Loco"
+    },
+    {
+      "food": "burguer",
+      "id": 23,
+      "location": "alcudia",
+      "name": "Pirates Burger"
+    },
+    {
+      "food": "china",
+      "id": 24,
+      "location": "Palma",
+      "name": "Dragon Rojo"
+    },
+    {
+      "food": "italiana",
+      "id": 25,
+      "location": "cala ratjada",
+      "name": "Pizzeria di Mario"
+    },
+    {
+      "food": "mexicana",
+      "id": 26,
+      "location": "santanyi",
+      "name": "La Cantina"
+    },
+    {
+      "food": "mexicana",
+      "id": 27,
+      "location": "Palma",
+      "name": "Santa Cantina"
+    },
+    {
+      "food": "tradicional",
+      "id": 28,
+      "location": "Palma",
+      "name": "Bouncing meloconton"
+    }
+  ],
+  "users": [
+    {
+      "admin": true,
+      "age": 25,
+      "email": "dc@gmail.com",
+      "id": 1,
+      "name": "Huber",
+      "owner": true,
+      "password": "tripleX",
+      "restaurantName": "Como en casa",
+      "username": "DC"
+    },
+    {
+      "admin": false,
+      "age": 26,
+      "email": "andrea@gmail.com",
+      "id": 2,
+      "name": "Andrea",
+      "owner": false,
+      "password": "tripleX",
+      "restaurantName": "",
+      "username": "Andreita"
+    },
+    {
+      "admin": false,
+      "age": 26,
+      "email": "sandro@gmail.com",
+      "id": 3,
+      "name": "Sandro",
+      "owner": false,
+      "password": "tripleX",
+      "restaurantName": "",
+      "username": "Wallotorm"
+    },
+    {
+      "admin": false,
+      "age": 20,
+      "email": "paula@gmail.com",
+      "id": 4,
+      "name": "Paula",
+      "owner": false,
+      "password": "tripleX",
+      "restaurantName": "",
+      "username": "Pauliss"
+    },
+    {
+      "admin": false,
+      "age": 33,
+      "email": "alfa@gmail.com",
+      "id": 5,
+      "name": "Alfa",
+      "owner": true,
+      "password": "tripleX",
+      "restaurantName": "Bouncing meloconton",
+      "username": "El aaaaalfa"
+    },
+    {
+      "admin": false,
+      "age": 26,
+      "email": "toto@gmail.com",
+      "id": 6,
+      "name": "Toto",
+      "owner": false,
+      "password": "tripleX",
+      "restaurantName": "",
+      "username": "Toterias18"
+    }
+  ],
+  "Carta": [
+    {
+      "Menu": [
+        "Ensalda Atun/Mixta/Cesar",
+        "Potaje del dia",
+        "Macarrones",
+        "Huevos rotos",
+        "Lomo",
+        "Escalope",
+        "Tarta de queso",
+        "Flan de huevo"
+      ],
+      "Entrantes": [
+        "Chipirones",
+        "Boquerones",
+        "Croquetas",
+        "Pimientos de padron",
+        "Frito mallorquin",
+        "Lagrimitas de pollo",
+        "Calamares a la andaluza",
+        "Patatas bravas",
+        "Ensaladilla rusa",
+        "Huevos rotos"
+      ],
+      "Pescados": [
+        "Atun",
+        "Rape",
+        "Dorada",
+        "Lenguado",
+        "Pescaito Frito",
+        "Sepia"
+      ],
+      "Carnes": [
+        "Solomillo",
+        "Bistec",
+        "Chuleton",
+        "Chuleton 2,5KG",
+        "Wagyu",
+        "Kobe",
+        "Escalope",
+        "Lomo",
+        "Cordon Bleu"
+      ],
+      "Cuchara": [
+        "Potaje de lentejas",
+        "Sopa",
+        "Potaje de garbanzos",
+        "Fabada",
+        "Potaje de alubias",
+        "Gazpacho"
+      ],
+      "Postres": [
+        "Tiramisu",
+        "Coolant",
+        "Bolas de Helado",
+        "Flan de huevo",
+        "Tarta de queso",
+        "Tarta de zanahoria",
+        "Brownie"
+      ],
+      "Bebidas": [
+        "Cola",
+        "Naranjada",
+        "Limonada",
+        "Vino",
+        "Agua",
+        "Cubatas",
+        "Cervezas"
+      ],
+      "Buguers": [
+        "Clasica",
+        "Bacon & Queso",
+        "Americana",
+        "Bourbon",
+        "Cabra Caramelizada",
+        "Foundie",
+        "3 Quesos",
+        "Dulzona"
+      ],
+      "Italiana": [
+        "P. Clasica",
+        "P. Bacon & Queso",
+        "P. Americana",
+        "P. Bourbon",
+        "P. Cabra Caramelizada",
+        "P. 3 Quesos",
+        "P. Barbacoa",
+        "P. Napolitana",
+        "P. Dulzona",
+        "Spaguettis",
+        "Macarrones",
+        "Tortelini"
+      ],
+      "Chino": [
+        "Gyozas",
+        "Katsudon",
+        "Rolls Variados",
+        "Nigiri",
+        "Sopas",
+        "Pollo al limon",
+        "Pato"
+      ],
+      "Mexicana": [
+        "tacos",
+        "burritos",
+        "nachos",
+        "chily con carne",
+        "Cabra Caramelizada"
+      ]
+    }
+  ],
+  "Mesas": [
+    {
+      "id": 1,
+      "comensales": 2,
+      "hourReserve": null,
+      "reserve": true
+    },
+    {
+      "id": 2,
+      "comensales": 4,
+      "reserve": true
+    },
+    {
+      "id": 3,
+      "comensales": 8,
+      "reserve": true
+    },
+    {
+      "id": 4,
+      "comensales": 10,
+      "reserve": true
+    },
+    {
+      "id": 5,
+      "comensales": 5,
+      "reserve": true
+    },
+    {
+      "id": 6,
+      "comensales": 3,
+      "reserve": true
+    },
+    {
+      "id": 7,
+      "comensales": 12,
+      "reserve": true
+    },
+    {
+      "id": 8,
+      "comensales": 5,
+      "reserve": true
+    },
+    {
+      "id": 9,
+      "comensales": 2,
+      "reserve": true
+    }
+  ]
+}

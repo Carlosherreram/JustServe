@@ -21,6 +21,12 @@ export class ReservaService {
     return this.data.getReserves();
   }
 
+  // public postReservas(reserva: Reserva): Observable<Reserva> {
+  //   const newId = this.userReservas.length + 1;
+  //   const newUser = { ...user, id: newId };
+  //   this.users.push(newUser);
+  //   return of(newUser);
+  // }
 
 
 

@@ -3,15 +3,14 @@
     <h1>Mis Reservas</h1>
   </div>
   <div class="reservas" *ngFor="let reserva of reservas"
-    [ngStyle]="{'background-color': isReservaExpired(reserva) ? 'red' : 'white'}">
+    [ngStyle]="{'background-color': isReservaExpired(reserva) ? 'grey' : 'white'}">
     <div class="reserva" name="reserva">
       <div class="restaurante">
         <h2>{{reserva.nameRestaurante}}</h2>
       </div>
       <div class="info">
-        <p>Fecha: 18/05/2023</p>
-        <p>Hora reserva: 8:00 PM</p>
-        <p>Cantidad de personas: 4</p>
+        <p>Fecha: {{reserva.date}}</p>
+        <p>Cantidad de personas: {{reserva.numPers}}</p>
       </div>
     </div>
   </div>

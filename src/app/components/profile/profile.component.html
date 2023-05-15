@@ -12,8 +12,11 @@
     <div *ngIf="userLog.owner===true" class="restaurante">
       <h2>Propietario de: {{restaurante.name}}</h2>
       <h2>Tipo de comida: {{restaurante.food}}</h2>
-      <h2>Tipo de comida: {{restaurante.location}}</h2>
+      <h2>Localidad: {{restaurante.location}}</h2>
 
+    </div>
+    <div *ngIf="userLog.owner===false" class="restaurante">
+      <p>No es propietario</p>
     </div>
   </div>
 </div>

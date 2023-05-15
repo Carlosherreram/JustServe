@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   public foodSelect = ""
   public locationSelect = ""
   public MSG = '';
-  constructor(private restauranteService: RestauranteService) {
+  constructor(public restauranteService: RestauranteService) {
     this.getDataOfRestaurants()
   }
   ngOnInit(): void {
