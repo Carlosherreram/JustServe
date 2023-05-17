@@ -37,6 +37,7 @@
       width: 70%;
       height: 90%;
       background-color: burlywood;
+      cursor: pointer;
     }
   }
 
@@ -71,6 +72,7 @@
     background-color: $accentColor;
     height: 3rem;
     width: 8rem;
+    cursor: pointer;
 
     option:hover {
       background-color: $shadows;
@@ -102,6 +104,25 @@
         0 0 25px $accentColor,
         0 0 50px $accentColor,
         0 0 100px $accentColor;
+    }
+  }
+
+  .notification {
+    position: fixed;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $accentColor;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    z-index: 9999;
+
+    &.show {
+      opacity: 1;
     }
   }
 
@@ -149,7 +170,7 @@
   .calendar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    height: 4rem;
+    height: 15%;
     background-color: $accentColor;
     margin-bottom: 2rem;
     justify-items: stretch;
@@ -157,6 +178,8 @@
 
     .weekly {
       display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       margin-left: 1rem;
@@ -167,6 +190,7 @@
         height: 80%;
         background-color: $accentColor;
         border: $accentColor;
+        cursor: pointer;
 
         &:hover {
           background-color: aquamarine;
@@ -191,9 +215,124 @@
   .seletedRestaurant {
     display: grid;
     grid-template-areas: "restaurante carta carta dateMesas";
-    flex-direction: row;
-    justify-content: flex-start;
     gap: 8rem;
+  }
+
+  @media screen and (max-width: 1650px) {
+    .seletedRestaurant {
+      display: grid;
+      grid-template-areas: "restaurante"
+        "carta"
+        "dateMesas";
+
+      gap: 3rem;
+      justify-content: space-around;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 8rem;
+      gap: 1rem;
+    }
+
+    .mesas {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 26rem;
+      margin-bottom: 6rem;
+      gap: 2rem;
+
+      .mesa {
+        height: 8rem;
+        width: 10rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .seletedRestaurant {
+      display: grid;
+      width: 100%;
+      grid-template-areas: "restaurante"
+        "carta"
+        "dateMesas";
+      gap: 3rem;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .cartaComida {
+      display: flex;
+      width: 500px;
+      height: 950px;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 8rem;
+      gap: 1rem;
+    }
+
+    .mesas {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 26rem;
+      margin-bottom: 6rem;
+      gap: 2rem;
+
+      .mesa {
+        height: 8rem;
+        width: 10rem;
+      }
+    }
+
+
+  }
+
+  @media screen and (max-width: 590px) {
+    .seletedRestaurant {
+      display: grid;
+      grid-template-areas: "restaurante"
+        "carta"
+        "dateMesas";
+      gap: 3rem;
+      justify-content: space-around;
+      height: 100%;
+    }
+
+    .cartaComida {
+      display: flex;
+      width: 450px;
+      height: 950px;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      height: 12rem;
+      gap: 1rem;
+    }
+
+    .mesas {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      height: 40rem;
+      margin-bottom: 12rem;
+      gap: 2rem;
+
+      .mesa {
+        height: 8rem;
+        width: 10rem;
+      }
+    }
+
+
   }
 
   .cardRestaurants {

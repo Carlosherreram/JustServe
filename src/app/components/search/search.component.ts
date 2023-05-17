@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   public foodSelect = ""
   public locationSelect = ""
   public MSG = '';
+  private locationPrev: string = ''
   constructor(public restauranteService: RestauranteService) {
     this.getDataOfRestaurants()
   }
@@ -31,15 +32,18 @@ export class SearchComponent implements OnInit {
     if (this.searchRestaurantes.length === 0) {
       this.searchRestaurantes = this.data.filter(restaurantes =>
         restaurantes.location === location)
-      const notification = document.querySelector('.notification');
-      if (notification) {
-        notification.classList.add('show');
-        setTimeout(() => {
-          notification.classList.remove('show');
-        }, 3000);
-      }
-      this.MSG = `No existe ningun restaurante con esa combinacion,
+      if (this.locationSelect != this.locationPrev) {
+        this.locationPrev = this.locationSelect
+        const notification = document.querySelector('.notification');
+        if (notification) {
+          notification.classList.add('show');
+          setTimeout(() => {
+            notification.classList.remove('show');
+          }, 3000);
+        }
+        this.MSG = `No existe ningun restaurante con esa combinacion,
   por defecto se mostraran los restaurantes con las misma localidad`;
+      }
     }
   }
 

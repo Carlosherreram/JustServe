@@ -19,11 +19,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onRegister() {
+  public onRegister(): void {
     this.authService.login()
   }
 
-  onOwnerChange(event: any) {
+  public onOwnerChange(event: any): void {
     if (!event.target.checked) {
       this.nameRest = null; // si el checkbox está desmarcado, establecer en null
     } else {
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  public onSubmit(): void {
 
     const nameInput = document.getElementById('nombre') as HTMLInputElement;
     const ageInput = document.getElementById('age') as HTMLInputElement;
@@ -40,6 +40,7 @@ export class RegisterComponent implements OnInit {
     const ownerInput = document.getElementById('owner') as HTMLInputElement;
     const restaurantNameInput = document.getElementById('nameRest') as HTMLInputElement;
     const passwordInput = document.getElementById('password') as HTMLInputElement;
+
     if (!this.register) {
       const user: User = {
         name: nameInput.value,

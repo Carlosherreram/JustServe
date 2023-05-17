@@ -18,6 +18,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ReservaService } from 'src/app/services/reserva.service';
 import { SelectedRestaurantComponent } from './components/selected-restaurant/selected-restaurant.component';
@@ -32,7 +33,6 @@ import { SelectedRestaurantComponent } from './components/selected-restaurant/se
     HomeComponent,
     OfferComponent,
     LoginComponent,
-    LoginComponent,
     RegisterComponent,
     LoginPageComponent,
     ProfileComponent,
@@ -46,7 +46,7 @@ import { SelectedRestaurantComponent } from './components/selected-restaurant/se
     FormsModule,
     HttpClientModule
   ],
-  providers: [RestauranteService, DataService, AuthService, ReservaService, RestauranteComponent, SelectedRestaurantComponent],
+  providers: [RestauranteService, DataService, CookieService, AuthService, ReservaService, RestauranteComponent, SelectedRestaurantComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

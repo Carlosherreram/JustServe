@@ -13,6 +13,7 @@ export class AuthService {
 
   public userLogged: User[] = []
 
+
   constructor(public dataService: DataService) { }
 
   public getUsers(): Observable<User[]> {

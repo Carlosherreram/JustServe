@@ -29,8 +29,12 @@
             </p>
           </div>
         </div>
+        <div class="notification">
+          <p>{{ MSG }}</p>
+        </div>
         <div>
-          <button class="reserveButton" type="submit">Reservar</button>
+          <button *ngIf="logged" class="reserveButton" type="submit"
+            (click)="makeReserve(selectedDay,hour,idMesa, numPersMesa, selectedRestaurante.name )">Reservar</button>
         </div>
       </div>
     </div>
@@ -76,9 +80,8 @@
     <div class="reserve">
       <div class="calendar">
         <div class="weekly" *ngFor="let day of days">
-          <button class="calendarWeekly" type="submit" value="{{day}}">{{day}}</button>
+          <button class="calendarWeekly" type="submit" (click)="selectedDay = day">{{day}}</button>
         </div>
-
       </div>
       <div class="dateReserve">
         <div class="hourReserve">
@@ -88,12 +91,16 @@
             <option value="">Limpiar campo</option>
           </select>
         </div>
-        <button class="searchTable" type="submit">Buscar</button>
       </div>
       <div class="mesas">
         <div class="mesa" *ngFor="let mesa of mesas">
-          Id de las mesas: {{mesa.id}}
-          Numero de comensales: {{mesa.comensales}}
+          <div *ngIf="mesa.reserve" (click)="idMesa = mesa.id">
+            RESERVAR MESA <br><br>
+            Nº comensales: {{mesa.comensales}}
+          </div>
+          <div *ngIf="!mesa.reserve" (click)="idMesa = mesa.id" [ngStyle]="{'cursor': 'not-allowed' }">
+            <img src="../../../assets/sold.jpg" style="width: 100px; height: 100px;">
+          </div>
         </div>
       </div>
     </div>
