@@ -3,109 +3,110 @@
     {
       "date": "2020-11-10",
       "nameRestaurante": "Burger Mafia",
-      "numPers": 2,
-      "userName": "Huber"
+      "numberPers": 2,
+      "userName": "Huber",
+      "idMesa": 2
     },
     {
       "date": "2023-06-10",
       "nameRestaurante": "Es Fornet de Sineu",
-      "numPers": 2,
+      "numberPers": 2,
       "userName": "Huber"
     },
     {
       "date": "2022-05-15",
       "nameRestaurante": "La Piazzetta",
-      "numPers": 3,
+      "numberPers": 3,
       "userName": "Huber"
     },
     {
       "date": "2022-05-12",
       "nameRestaurante": "La Cucina",
-      "numPers": 2,
+      "numberPers": 2,
       "userName": "Sandro"
     },
     {
       "date": "2022-05-14",
       "nameRestaurante": "Il Tano",
-      "numPers": 3,
+      "numberPers": 3,
       "userName": "Sandro"
     },
     {
       "date": "2022-05-18",
       "nameRestaurante": "Celler Ca'n Amer",
-      "numPers": 4,
+      "numberPers": 4,
       "userName": "Sandro"
     },
     {
       "date": "2024-03-13",
       "nameRestaurante": "Burger Mafia",
-      "numPers": 2,
+      "numberPers": 2,
       "userName": "Toto"
     },
     {
       "date": "2023-08-14",
       "nameRestaurante": "Pizzeria di Mario",
-      "numPers": 4,
+      "numberPers": 4,
       "userName": "Toto"
     },
     {
       "date": "2021-02-17",
       "nameRestaurante": "Es Cactus",
-      "numPers": 3,
+      "numberPers": 3,
       "userName": "Toto"
     },
     {
       "date": "2022-12-12",
       "nameRestaurante": "Burger Mafia",
-      "numPers": 2,
+      "numberPers": 12,
       "userName": "Alfa"
     },
     {
       "date": "2023-04-20",
       "nameRestaurante": "La Piazzetta",
-      "numPers": 3,
+      "numberPers": 5,
       "userName": "Alfa"
     },
     {
       "date": "2023-04-22",
       "nameRestaurante": "Es Fornet de Sineu",
-      "numPers": 4,
+      "numberPers": 2,
       "userName": "Alfa"
     },
     {
       "date": "2023-08-10",
       "nameRestaurante": "Restaurante Gran Muralla",
-      "numPers": 2,
+      "numberPers": 2,
       "userName": "Andrea"
     },
     {
       "date": "2023-05-13",
       "nameRestaurante": "Taco Loco",
-      "numPers": 3,
+      "numberPers": 3,
       "userName": "Andrea"
     },
     {
       "date": "2022-02-16",
       "nameRestaurante": "The Taco Shop",
-      "numPers": 4,
+      "numberPers": 4,
       "userName": "Andrea"
     },
     {
       "date": "2023-07-04",
       "nameRestaurante": "Il Tano",
-      "numPers": 2,
+      "numberPers": 2,
       "userName": "Paula"
     },
     {
       "date": "2023-02-19",
       "nameRestaurante": "Dragon Rojo",
-      "numPers": 3,
+      "numberPers": 3,
       "userName": "Paula"
     },
     {
       "date": "2021-05-11",
       "nameRestaurante": "Il Tano",
-      "numPers": 5,
+      "numberPers": 5,
       "userName": "Paula"
     }
   ],

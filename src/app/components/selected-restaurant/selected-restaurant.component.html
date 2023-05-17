@@ -94,7 +94,7 @@
       </div>
       <div class="mesas">
         <div class="mesa" *ngFor="let mesa of mesas">
-          <div *ngIf="mesa.reserve" (click)="idMesa = mesa.id">
+          <div *ngIf="mesa.reserve" (click)="idMesa = mesa.id" (click)="numPersMesa = mesa.comensales">
             RESERVAR MESA <br><br>
             Nº comensales: {{mesa.comensales}}
           </div>
