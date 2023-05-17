@@ -16,8 +16,7 @@ import { RestauranteService } from 'src/app/services/restaurante.service';
 })
 export class SelectedRestaurantComponent implements OnInit {
   public selectedRestaurante: Restaurante | null = null;
-  public logged = true
-  // this.authService.isLoggeIn
+  public logged = this.authService.isLoggedIn
   public carta: Carta[] = []
   public mesas: Mesa[] = []
   public days: string[] = []
