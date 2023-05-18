@@ -54,6 +54,8 @@
       margin-top: 2rem;
     }
 
+
+
     button {
       background-color: $mainColor;
       border: none;
@@ -121,4 +123,40 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 503px) {
+  .container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .find {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    width: 25rem !important;
+    height: 30rem !important;
+    margin: 2rem 0 4rem;
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 80rem;
+      width: 10rem;
+    }
+
+    button {
+      padding-bottom: 8rem;
+    }
+
+  }
+
+  .card {
+    width: 15rem !important;
+  }
+
 }

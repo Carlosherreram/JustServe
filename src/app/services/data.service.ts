@@ -6,8 +6,7 @@ import { User } from 'src/app/models/users.model';
 import { Reserva } from 'src/app/models/reserva.model';
 import { Carta } from 'src/app/models/carta.model';
 import { Mesa } from 'src/app/models/mesas.model';
-import { AuthService } from 'src/app/services/auth.service';
-import { log } from 'console';
+import { stringify } from 'querystring';
 
 @Injectable({
   providedIn: 'root'
@@ -51,6 +50,18 @@ export class DataService {
       );
   }
 
+  public postReserve(day: string, hour: string, mesa: number, restaurantName: string, numberPers: number, userName: string): Observable<any> {
+    const reserva: Reserva = {
+      userName: userName,
+      nameRestaurante: restaurantName,
+      date: 'Dia: ' + day + ' ' + 'Hora: ' + hour,
+      idMesa: mesa,
+      numberPers: numberPers
+    };
+    console.log(reserva)
+    return this.http.post<any>('../assets/db.json' + '/reservas', reserva);
+  }
+
   public getUsers(): Observable<User[]> {
     return this.http.get<User[]>('../assets/db.json')
       .pipe(
@@ -65,17 +76,7 @@ export class DataService {
     return of(newUser);
   }
 
-  // public postReserve(day: string, hour: string, mesa: number, restaurantName: string, numberPers: number): Observable<any> {
-  //   const reserva: Reserva = {
-  //     userName: this.logged.userName ?? null,
-  //     nameRestaurante: restaurantName,
-  //     date: new Date(day + 'T' + hour),
-  //     idMesa: mesa,
-  //     numberPers: numberPers
-  //   };
 
-  //   return this.http.post<any>('../assets/db.json' + '/reservas', reserva);
-  // }
 
 
 

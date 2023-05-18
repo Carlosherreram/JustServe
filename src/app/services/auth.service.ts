@@ -13,6 +13,8 @@ export class AuthService {
 
   public userLogged: User[] = []
 
+  public userName = ''
+
 
   constructor(public dataService: DataService) { }
 

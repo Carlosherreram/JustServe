@@ -138,25 +138,25 @@
     {
       "food": "italiana",
       "id": 5,
-      "location": "Palma",
+      "location": "Sóller",
       "name": "Il Tano"
     },
     {
       "food": "mexicana",
       "id": 6,
-      "location": "Palma",
+      "location": "Llucmajor",
       "name": "Tijuana Tex Mex"
     },
     {
       "food": "burguer",
       "id": 7,
-      "location": "Palma",
+      "location": "Inca",
       "name": "Sa Cranca"
     },
     {
       "food": "italiana",
       "id": 8,
-      "location": "Palma",
+      "location": "cala millor",
       "name": "Pizza Pino"
     },
     {
@@ -180,19 +180,19 @@
     {
       "food": "burguer",
       "id": 12,
-      "location": "Palma",
+      "location": "santa ponça",
       "name": "Can Brondo"
     },
     {
       "food": "italiana",
       "id": 13,
-      "location": "Palma",
+      "location": "santanyi",
       "name": "La Cucina"
     },
     {
       "food": "mexicana",
       "id": 14,
-      "location": "Palma",
+      "location": "cala ratjada",
       "name": "Santi Tacos"
     },
     {
@@ -246,7 +246,7 @@
     {
       "food": "burguer",
       "id": 23,
-      "location": "alcudia",
+      "location": "Alcudia",
       "name": "Pirates Burger"
     },
     {

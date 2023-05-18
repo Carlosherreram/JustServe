@@ -8,7 +8,7 @@ import { DataService } from 'src/app/services/data.service';
   providedIn: 'root'
 })
 export class ReservaService {
-  // public restaurantes: BehaviorSubject<Restaurante[]> = new BehaviorSubject<Restaurante[]>([])
+  public restaurantes: BehaviorSubject<Restaurante[]> = new BehaviorSubject<Restaurante[]>([])
 
   public userReserves: Reserva[] = []
 
@@ -20,13 +20,6 @@ export class ReservaService {
   public userReservas(): Observable<Reserva[]> {
     return this.data.getReserves();
   }
-
-  // public postReservas(reserva: Reserva): Observable<Reserva> {
-  //   const newId = this.userReservas.length + 1;
-  //   const newUser = { ...user, id: newId };
-  //   this.users.push(newUser);
-  //   return of(newUser);
-  // }
 
 
 

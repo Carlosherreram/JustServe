@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
   public usersBBDD: User[] = []
   public email = ""
   public password = ""
+  public MSG = '';
+  public userName = ''
+
 
   private readonly USER_LOGGED_COOKIE = 'LOGGED'
 
@@ -37,8 +40,21 @@ export class LoginComponent implements OnInit {
       this.authService.isLoggedIn = true
       this.authService.userLogged.push(user)
       this.addCookie(this.USER_LOGGED_COOKIE, true)
+      this.userName = user.name
+      this.authService.userName = this.userName
+    }
+    else {
+      const notification = document.querySelector('.notification');
+      if (notification) {
+        notification.classList.add('show');
+        setTimeout(() => {
+          notification.classList.remove('show');
+        }, 3000);
+      }
+      this.MSG = `CREDENCIALES INCORRECTAS`;
     }
   }
+
   private addCookie(key: string, value: unknown, expirationTime?: number | Date): void {
     this.cookieService.set(
       key,

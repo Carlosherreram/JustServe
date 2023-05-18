@@ -20,27 +20,6 @@ h4 {
   gap: 1rem;
 }
 
-@media screen and (max-width: 1650px) {
-  .container {
-    height: 30rem;
-    margin-bottom: 16rem;
-  }
-}
-
-@media screen and (max-width: 1102px) {
-  .container {
-    height: 50rem;
-    margin-bottom: 16rem;
-  }
-}
-
-@media screen and (max-width: 835px) {
-  .container {
-    height: 90rem;
-    margin-bottom: 16rem;
-  }
-}
-
 .card {
   display: flex;
   flex-direction: row;
@@ -89,4 +68,32 @@ h4 {
   justify-content: center;
   width: 120px;
   height: 120px;
+}
+
+@media screen and (max-width: 1650px) {
+  .container {
+    height: 30rem;
+    margin-bottom: 16rem;
+  }
+}
+
+@media screen and (max-width: 1102px) {
+  .container {
+    height: 50rem;
+    margin-bottom: 16rem;
+  }
+}
+
+@media screen and (max-width: 835px) {
+  .container {
+    height: 90rem;
+    margin-bottom: 16rem;
+  }
+}
+
+@media screen and (max-width: 503px) {
+  .container {
+    margin: 0 !important;
+    padding-bottom: 15rem !important;
+  }
 }

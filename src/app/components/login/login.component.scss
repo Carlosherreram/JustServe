@@ -45,4 +45,24 @@
       }
     }
   }
+
+  .notification {
+    position: fixed;
+    margin-top: 10rem;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $accentColor;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease;
+    opacity: 0;
+    z-index: 9999;
+
+    &.show {
+      opacity: 1;
+    }
+  }
 }

@@ -66,7 +66,9 @@ export class SelectedRestaurantComponent implements OnInit {
     console.log('x')
   }
 
-  public makeReserve(day: string, hour: string, mesa: number, numberPers: number, nameRest: string): void {
+  public makeReserve(
+    day: string, hour: string, mesa: number, numberPers: number, nameRest: string)
+    : void {
     if (day != '' && hour != '' && nameRest != '' && mesa != 0 && numberPers != 0) {
       // this.DATA_SERVICE.postReserve(day, hour, mesa, nameRest, numberPers)
       const notification = document.querySelector('.notification');
@@ -76,6 +78,7 @@ export class SelectedRestaurantComponent implements OnInit {
           notification.classList.remove('show');
         }, 3000);
       }
+      this.DATA_SERVICE.postReserve(day, hour, mesa, nameRest, numberPers, this.authService.userName)
       this.MSG = `Reserva hecha`;
     } else {
       const notification = document.querySelector('.notification');
