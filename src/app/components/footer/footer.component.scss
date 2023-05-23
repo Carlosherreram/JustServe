@@ -50,10 +50,22 @@
 
   .slogan {
     display: flex;
+    flex-direction: column;
     inline-size: auto;
     align-items: center;
     height: 50px;
     justify-content: space-around;
+    transition: all;
+    transition-duration: 450ms;
+
+    .x {
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline 0.2rem solid $buttonHover;
+      }
+
+    }
   }
 
   .copy {

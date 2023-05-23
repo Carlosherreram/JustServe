@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { profile } from 'console';
+import { AboutComponent } from 'src/app/components/about/about.component';
 import { ProfileComponent } from 'src/app/components/profile/profile.component';
 import { ReservaComponent } from 'src/app/components/reserva/reserva.component';
 import { SelectedRestaurantComponent } from 'src/app/components/selected-restaurant/selected-restaurant.component';
@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'restaurantes/selectRestaurante', component: SelectedRestaurantComponent },
   { path: 'home/selectRestaurante', component: SelectedRestaurantComponent },
   { path: 'reservas', component: ReservaComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: '', component: HomeComponent }

@@ -22,6 +22,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { AuthService } from 'src/app/services/auth.service';
 import { ReservaService } from 'src/app/services/reserva.service';
 import { SelectedRestaurantComponent } from './components/selected-restaurant/selected-restaurant.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SelectedRestaurantComponent } from './components/selected-restaurant/se
     ProfileComponent,
     ReservaComponent,
     FooterComponent,
-    SelectedRestaurantComponent
+    SelectedRestaurantComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
