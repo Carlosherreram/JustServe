@@ -293,6 +293,17 @@
       "username": "DC"
     },
     {
+      "admin": true,
+      "age": 29,
+      "email": "carlos@gmail.com",
+      "id": 12,
+      "name": "Carlos",
+      "owner": false,
+      "password": "tripleX",
+      "restaurantName": "",
+      "username": "Carlitos"
+    },
+    {
       "admin": false,
       "age": 26,
       "email": "andrea@gmail.com",
@@ -464,7 +475,7 @@
       "id": 1,
       "comensales": 2,
       "hourReserve": null,
-      "reserve": true
+      "reserve": false
     },
     {
       "id": 2,
@@ -474,7 +485,7 @@
     {
       "id": 3,
       "comensales": 8,
-      "reserve": true
+      "reserve": false
     },
     {
       "id": 4,
@@ -484,7 +495,7 @@
     {
       "id": 5,
       "comensales": 5,
-      "reserve": true
+      "reserve": false
     },
     {
       "id": 6,

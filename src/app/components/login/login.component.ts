@@ -39,9 +39,10 @@ export class LoginComponent implements OnInit {
       this.authService.userLogged = []
       this.authService.isLoggedIn = true
       this.authService.userLogged.push(user)
-      this.addCookie(this.USER_LOGGED_COOKIE, true)
       this.userName = user.name
       this.authService.userName = this.userName
+      const token = "aquí_debes_tener_el_token_generado_en_el_backend";
+      this.addCookie(this.USER_LOGGED_COOKIE, token);
     }
     else {
       const notification = document.querySelector('.notification');
@@ -55,10 +56,21 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  private addCookie(key: string, value: unknown, expirationTime?: number | Date): void {
-    this.cookieService.set(
-      key,
-      value as string,
-    )
+  public checkSession() {
+    if (this.cookieService.get('LOGGED') === 'true') {
+    } else {
+    }
   }
+
+  public logout() {
+    this.cookieService.delete('LOGGED');
+  }
+
+  private addCookie(key: string, value: string, expirationTime?: number | Date): void {
+    const expirationDate = expirationTime ? new Date(expirationTime) : new Date();
+    expirationDate.setTime(expirationDate.getTime() + 60 * 60 * 1000); // 1 hora en milisegundos
+
+    this.cookieService.set(key, value, expirationDate, '/');
+  }
+
 }

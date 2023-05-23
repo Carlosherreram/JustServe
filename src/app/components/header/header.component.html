@@ -1,9 +1,18 @@
 <div class="container">
   <nav class="navbar">
-    <a id="nameButton" href="home">JustReserve</a>
-    <button class="hamburger">
-
-    </button>
+    <img class="banner" routerLink="home" alt="banner" src="../../../assets/banner.png">
+    <div class="entire-menu">
+      <input type="checkbox" id="change-hamburguer" />
+      <a class="hamburguer" href="#">
+        <span></span>
+        <label for="change-hamburguer"></label>
+      </a>
+      <div class="menu">
+        <a routerLink="home">Home</a>
+        <a routerLink="restaurantes">Restaurantes</a>
+        <a *ngIf="authService.isLoggedIn" routerLink="reservas">Reservas</a>
+      </div>
+    </div>
     <ul class="menu">
       <a routerLink="home">Home</a>
       <a (click)="this.restauranteService.cleanSelected()" routerLink="restaurantes">Restaurantes</a>

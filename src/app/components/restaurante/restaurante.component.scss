@@ -56,15 +56,25 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      color: white;
       position: relative;
       border-radius: 10px;
       height: 300px;
       width: 300px;
       padding: 1rem;
       background-color: $accentColor;
+      box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
       gap: 1rem;
       overflow: hidden;
       cursor: pointer;
+      transition: all;
+      transition-duration: 500ms;
+
+      &:hover {
+        width: 400px;
+        height: 400px;
+        font-size: 1.4rem;
+      }
 
       .title {
         display: flex;

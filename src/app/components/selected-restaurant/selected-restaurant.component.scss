@@ -26,6 +26,11 @@
     width: 100%;
     margin-top: 4rem;
     height: 50%;
+    gap: 2rem;
+
+    .selected {
+      background-color: $accentShadow !important;
+    }
 
     .mesa {
       display: flex;
@@ -33,11 +38,26 @@
       justify-self: center;
       border-radius: 1rem;
       text-align: center;
+      color: white;
       align-items: center;
-      width: 70%;
-      height: 90%;
-      background-color: burlywood;
+      width: 200px;
+      height: 100px;
+      background-color: $accentColor;
+      box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
       cursor: pointer;
+      transition: all;
+      transition-duration: 450ms;
+      overflow: hidden;
+
+
+
+      &:hover {
+        background-color: $accentShadow;
+        border: solid 0.1rem $buttonHover;
+        width: 250px;
+        height: 170px;
+      }
+
     }
   }
 
@@ -48,17 +68,27 @@
     align-items: flex-start;
     margin-bottom: 4rem;
     flex-wrap: wrap;
+
+    .searchTable {
+      background-color: $boxes;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $accentShadow;
+      }
+    }
   }
 
   .searchTable {
-    background: $accentColor;
+    background: $accentShadow;
     color: black;
     border-radius: 2rem;
     width: 6rem;
     height: 3rem;
 
     &:hover {
-      background-color: $mainColor;
+      background-color: $accentShadow;
     }
 
 
@@ -69,13 +99,13 @@
     text-align: center;
     border-radius: 2rem;
     box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
-    background-color: $accentColor;
+    background-color: $accentShadow;
     height: 3rem;
     width: 8rem;
     cursor: pointer;
 
     option:hover {
-      background-color: $shadows;
+      background-color: $buttonHover;
     }
 
   }
@@ -90,7 +120,7 @@
 
   .reserveButton {
     display: flex;
-    background-color: $accentColor;
+    background-color: $buttonHover;
     border-radius: 2rem;
     justify-content: center;
     align-items: center;
@@ -98,12 +128,13 @@
     height: 6rem;
     width: 100%;
     font-size: 1.5rem;
+    transition: all;
+    transition-duration: 450ms;
+    cursor: pointer;
 
     &:hover {
-      box-shadow: 0 0 5px $accentColor,
-        0 0 25px $accentColor,
-        0 0 50px $accentColor,
-        0 0 100px $accentColor;
+      height: 350px;
+      box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
     }
   }
 
@@ -112,7 +143,7 @@
     top: 350px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: $accentColor;
+    background-color: white;
     color: black;
     padding: 10px;
     border-radius: 5px;
@@ -134,8 +165,11 @@
     border-radius: 2rem;
     flex-wrap: nowrap;
     width: 600px;
+    color: white;
     height: 650px;
-    background-color: bisque;
+    background-color: $accentColor;
+    box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
+    border: solid 0.1rem $buttonHover;
     gap: 2rem;
 
     .burguers {
@@ -163,6 +197,7 @@
       flex-wrap: wrap;
       flex-direction: column;
       margin-left: 2rem;
+
     }
 
   }
@@ -171,10 +206,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     height: 15%;
-    background-color: $accentColor;
+    border-radius: 1rem;
+    background-color: $buttonHover;
     margin-bottom: 2rem;
     justify-items: stretch;
     align-items: stretch;
+    box-shadow: 0rem 0rem 4rem 0.6rem $boxes;
+    border: solid $buttonHover 0.2rem;
+
 
     .weekly {
       display: flex;
@@ -188,16 +227,18 @@
       button {
         width: 100%;
         height: 80%;
-        background-color: $accentColor;
-        border: $accentColor;
+        background-color: $buttonHover;
+        border: $boxes;
         cursor: pointer;
+        transition: all;
+        transition-duration: 450ms;
 
         &:hover {
-          background-color: aquamarine;
+          background-color: $accentShadow;
         }
 
-        &:active {
-          background-color: aqua;
+        &.selected {
+          background-color: $accentShadow;
         }
       }
     }
@@ -235,6 +276,16 @@
       grid-template-rows: 1fr 1fr;
       height: 8rem;
       gap: 1rem;
+      transition: all;
+      transition-duration: 450ms;
+
+      &:hover {
+        background-color: buttonHover;
+      }
+
+      &.selected {
+        background-color: buttonHover;
+      }
     }
 
     .mesas {
@@ -244,9 +295,12 @@
       margin-bottom: 6rem;
       gap: 2rem;
 
+
       .mesa {
         height: 8rem;
         width: 10rem;
+        transition: all;
+        transition-duration: 450ms;
       }
     }
   }
@@ -275,6 +329,16 @@
       grid-template-rows: 1fr 1fr;
       height: 8rem;
       gap: 1rem;
+      transition: all;
+      transition-duration: 450ms;
+
+      &:hover {
+        background-color: $accentShadow;
+      }
+
+      &.selected {
+        background-color: $accentShadow;
+      }
     }
 
     .mesas {
@@ -287,6 +351,8 @@
       .mesa {
         height: 8rem;
         width: 10rem;
+        transition: all;
+        transition-duration: 450ms;
       }
     }
 
@@ -316,6 +382,8 @@
       grid-template-rows: 1fr 1fr 1fr 1fr;
       height: 12rem;
       gap: 1rem;
+      transition: all;
+      transition-duration: 450ms;
     }
 
     .mesas {
@@ -329,6 +397,8 @@
       .mesa {
         height: 8rem;
         width: 10rem;
+        transition: all;
+        transition-duration: 450ms;
       }
     }
 
@@ -344,6 +414,7 @@
     justify-content: center;
 
     .card {
+      color: white;
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -358,6 +429,8 @@
       gap: 1rem;
       overflow: hidden;
       cursor: pointer;
+      border: solid 0.2rem $buttonHover;
+      box-shadow: 0rem 0rem 4rem 0.6rem $boxes;
 
       .title {
         display: flex;

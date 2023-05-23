@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Carta } from 'src/app/models/carta.model';
 import { Mesa } from 'src/app/models/mesas.model';
 import { Restaurante } from 'src/app/models/restaurante.model';
-import { User } from 'src/app/models/users.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { DataService } from 'src/app/services/data.service';
 import { RestauranteService } from 'src/app/services/restaurante.service';
@@ -19,6 +17,7 @@ export class SelectedRestaurantComponent implements OnInit {
   public logged = this.authService.isLoggedIn
   public carta: Carta[] = []
   public mesas: Mesa[] = []
+  public mesasAvailables: Mesa[] = []
   public days: string[] = []
   public MSG = '';
   public numMonth: string[] = []
@@ -26,7 +25,6 @@ export class SelectedRestaurantComponent implements OnInit {
   public selectedDay: string = ''
   public idMesa: number = 0
   public numPersMesa: number = 0
-
   public hours: string[] = ['12:30', '13:30', '14:30', '15:30', '16:30', '16:30', '20:00', '21:00', '22:00']
 
   constructor(public restauranteService: RestauranteService,
@@ -40,10 +38,6 @@ export class SelectedRestaurantComponent implements OnInit {
     this.selectedRestaurante = this.restauranteService.selectedRestaurante
     this.DATA_SERVICE.getCartas().subscribe((cartas: Carta[]) => {
       this.carta = cartas
-    })
-    this.DATA_SERVICE.getMesas().subscribe((mesas: Mesa[]) => {
-      this.mesas = mesas
-      this.mesas.sort((a, b) => a.comensales - b.comensales);
     })
     const today = new Date();
 
@@ -59,6 +53,20 @@ export class SelectedRestaurantComponent implements OnInit {
     }
   }
 
+  public showNotification(message: string, duration: number): void {
+    const notification = document.querySelector('.notification');
+
+    if (notification) {
+      notification.textContent = message;
+      notification.classList.add('show');
+
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, duration);
+    }
+  }
+
+
   public cleanSelected(): void {
     console.log('x')
     this.selectedRestaurante = null
@@ -66,30 +74,29 @@ export class SelectedRestaurantComponent implements OnInit {
     console.log('x')
   }
 
+  public searchReserve(start_time: string, date: string, restaurantName: string): Mesa[] {
+    if (start_time && date) {
+      this.DATA_SERVICE.getMesas().subscribe((mesas: Mesa[]) => {
+        this.mesas = mesas
+        this.mesas.sort((a, b) => a.comensales - b.comensales);
+      })
+      return this.mesas
+    }
+    this.showNotification('FALTAN CAMPOS POR RELLENAR', 3000)
+    this.mesas = []
+    return this.mesas
+
+  }
+
   public makeReserve(
     day: string, hour: string, mesa: number, numberPers: number, nameRest: string)
     : void {
     if (day != '' && hour != '' && nameRest != '' && mesa != 0 && numberPers != 0) {
       // this.DATA_SERVICE.postReserve(day, hour, mesa, nameRest, numberPers)
-      const notification = document.querySelector('.notification');
-      if (notification) {
-        notification.classList.add('show');
-        setTimeout(() => {
-          notification.classList.remove('show');
-        }, 3000);
-      }
+      this.showNotification('RESERVA HECHA', 3000)
       this.DATA_SERVICE.postReserve(day, hour, mesa, nameRest, numberPers, this.authService.userName)
-      this.MSG = `Reserva hecha`;
     } else {
-      const notification = document.querySelector('.notification');
-      if (notification) {
-        notification.classList.add('show');
-        setTimeout(() => {
-          notification.classList.remove('show');
-        }, 3000);
-      }
-      this.MSG = `Faltan campos por rellenar`;
-
+      this.showNotification('FALTAN CAMPOS POR RELLENAR', 3000)
     }
 
   }

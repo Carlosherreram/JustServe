@@ -1,5 +1,9 @@
+@import"../../../styles.scss";
+
 .footer {
-  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: #525b56;
   color: white;
   padding: 20px;
   position: fixed;
@@ -9,16 +13,52 @@
   /* valor fijo de altura */
   padding-top: 10px;
   padding-bottom: 10px;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0;
 
-  p {
-    margin-right: 5%;
+
+
+
+  .banner {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      transition: all;
+      transition-duration: 450ms;
+
+      img {
+        display: flex;
+        height: 50px;
+
+        &:hover {
+          height: 55px;
+        }
+      }
+
+
+    }
   }
 
+  .slogan {
+    display: flex;
+    inline-size: auto;
+    align-items: center;
+    height: 50px;
+    justify-content: space-around;
+  }
 
-
+  .copy {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }

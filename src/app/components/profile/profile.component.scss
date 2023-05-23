@@ -14,10 +14,14 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    color: white;
     padding: 2rem;
-    background-color: $accentColor;
     border-radius: 1rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    background-color: $accentColor;
+    border: solid 0.2rem $buttonHover;
+    box-shadow: 0rem 0rem 4rem 0.6rem $boxes;
+    transition: all;
+    transition-duration: 500ms;
 
     h3 {
       display: flex;
@@ -34,11 +38,17 @@
       border-radius: 50%;
       object-fit: cover;
       margin-top: 1rem;
-      box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
     }
 
     p {
       font-size: 1.5rem;
+    }
+
+    &:hover {
+      border-radius: 1rem;
+      width: 400px;
+      height: 600px;
+      font-size: 1.4rem;
     }
   }
 }

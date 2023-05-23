@@ -3,7 +3,13 @@
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  color: #fff;
+  width: 500px;
+  background-color: $boxes;
+  border-radius: 1rem;
+  height: 350px;
 
   h1 {
     font-size: 2rem;

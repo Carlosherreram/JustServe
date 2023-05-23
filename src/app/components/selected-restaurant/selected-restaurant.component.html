@@ -8,19 +8,19 @@
             </h3>
           </div>
           <div class="logo" *ngIf="selectedRestaurante.food == 'burguer'">
-            <img src="../../../assets/buguer.jpg" />
+            <img alt="tipo de comida" src="../../../assets/buguer.jpg" />
           </div>
           <div class="logo" *ngIf="selectedRestaurante.food == 'china'">
-            <img src="../../../assets/china.jpg" />
+            <img alt="tipo de comida" src="../../../assets/china.jpg" />
           </div>
           <div class="logo" *ngIf="selectedRestaurante.food == 'italiana'">
-            <img src="../../../assets/pizza.jpg" />
+            <img alt="tipo de comida" src="../../../assets/pizza.jpg" />
           </div>
           <div class="logo" *ngIf="selectedRestaurante.food == 'mexicana'">
-            <img src="../../../assets/mexicana.jpg" />
+            <img alt="tipo de comida" src="../../../assets/mexicana.jpg" />
           </div>
           <div class="logo" *ngIf="selectedRestaurante.food == 'tradicional'">
-            <img src="../../../assets/tradicional.jpg" />
+            <img alt="tipo de comida" src="../../../assets/tradicional.jpg" />
           </div>
           <div class="descriptionCard">
             <p>Tipo de comida: {{selectedRestaurante.food.charAt(0).toUpperCase()+selectedRestaurante.food.slice(1)}}
@@ -80,29 +80,35 @@
     <div class="reserve">
       <div class="calendar">
         <div class="weekly" *ngFor="let day of days">
-          <button class="calendarWeekly" type="submit" (click)="selectedDay = day">{{day}}</button>
+          <button class="calendarWeekly" type="submit" [ngClass]="{ 'selected': selectedDay === day }"
+            (click)="selectedDay = day">{{day}}</button>
         </div>
       </div>
       <div class="dateReserve">
         <div class="hourReserve">
           <select class="hourSelect" name="hour" [(ngModel)]="hour">
-            <option value="" disabled selected hidden>Horas de comida</option>
+            <option disabled selected hidden>Horas de comida</option>
             <option *ngFor="let hour of hours" [value]="hour">{{hour}}</option>
             <option value="">Limpiar campo</option>
           </select>
         </div>
+        <button class="searchTable" type="submit"
+          (click)="searchReserve(hour, selectedDay,selectedRestaurante.name)">Buscar mesa</button>
       </div>
       <div class="mesas">
-        <div class="mesa" *ngFor="let mesa of mesas">
-          <div *ngIf="mesa.reserve" (click)="idMesa = mesa.id" (click)="numPersMesa = mesa.comensales">
-            RESERVAR MESA <br><br>
-            Nº comensales: {{mesa.comensales}}
+        <ng-container *ngFor="let mesa of mesas">
+          <div [ngClass]="{ 'selected': idMesa === mesa.id }" class="mesa">
+            <div *ngIf="mesa.reserve" (click)="idMesa = mesa.id" (click)="numPersMesa = mesa.comensales">
+              RESERVAR MESA <br><br>
+              Nº comensales: {{mesa.comensales}}
+            </div>
+            <div *ngIf="!mesa.reserve" (click)="idMesa = mesa.id" [ngStyle]="{'cursor': 'not-allowed' }">
+              <img src="../../../assets/sold.jpg" style="width: 100%; height: auto;">
+            </div>
           </div>
-          <div *ngIf="!mesa.reserve" (click)="idMesa = mesa.id" [ngStyle]="{'cursor': 'not-allowed' }">
-            <img src="../../../assets/sold.jpg" style="width: 100px; height: 100px;">
-          </div>
-        </div>
+        </ng-container>
       </div>
+
     </div>
   </div>
 </div>
