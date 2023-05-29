@@ -2,12 +2,13 @@ import { Restaurante } from "src/app/models/restaurante.model";
 
 export interface User {
   id?: number;
-  name: string;
+  name?: string;
   username: string;
-  age: number;
-  email: string;
+  age?: number;
+  email?: string;
   password: string;
-  owner: boolean;
+  owner?: boolean;
   admin?: boolean;
   restaurantName?: string | null;
+  token?: string
 }

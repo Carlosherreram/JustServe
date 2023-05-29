@@ -30,7 +30,8 @@
           </div>
         </div>
         <div class="notification">
-          <p>{{ MSG }}</p>
+          <p *ngIf="MSG !== 'MESA OCUPADA'">{{ MSG }}</p>
+          <p *ngIf="MSG === 'MESA OCUPADA'" style="background-color: red;">{{ MSG }}</p>
         </div>
         <div>
           <button *ngIf="logged" class="reserveButton" type="submit"

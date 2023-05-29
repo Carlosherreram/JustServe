@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ReservaResponse } from 'src/app/models/reserva-response';
 import { Reserva } from 'src/app/models/reserva.model';
-import { AuthService } from 'src/app/services/auth.service';
+import { DataService } from 'src/app/services/data.service';
 import { ReservaService } from 'src/app/services/reserva.service';
 
 @Component({
@@ -9,34 +10,47 @@ import { ReservaService } from 'src/app/services/reserva.service';
   styleUrls: ['./reserva.component.scss']
 })
 export class ReservaComponent implements OnInit {
-  public reservas: Reserva[] = []
+  public reservas: ReservaResponse[] = []
   public date: Date = new Date()
+  public logged: boolean = true
+  public loaded = false
 
   constructor(private reservaService: ReservaService,
-    private authService: AuthService) {
+    private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    this.reservaService.userReservas().subscribe((reserve: Reserva[]) => {
-      this.reservas = reserve;
-      this.checkUserReserve()
+    this.reservaService.getReserves().subscribe((reserve: ReservaResponse[]) => {
+      if (reserve && typeof reserve === 'object') {
+        this.reservas = Object.values(reserve);
+      }
+      this.loaded = true
+      console.log(this.reservas)
     })
 
-
   }
 
-  private checkUserReserve(): void {
-    if (this.authService.userLogged) {
-      this.reservas = this.reservas.filter(reserva =>
-        reserva.userName === this.authService.userLogged[0].name
-      );
-    }
-  }
+  public updateUserReserves() {
+    this.reservaService.getReserves().subscribe((reserve: ReservaResponse[]) => {
+      this.reservas = reserve;
+    })
 
+  }
 
   public isReservaExpired(reserva: Reserva): boolean {
     const reserveDate: Date = new Date(reserva.date);
     return reserveDate < this.date;
+  }
+
+  public deleteReserve(idReserve: number) {
+    this.dataService.deleteReserves(idReserve, this.dataService.token).subscribe(() => {
+
+    });
+
+  }
+
+  public updateReserve(idReserve: number, start_time: string) {
+    this.reservaService.updateReserve(idReserve, start_time)
   }
 
 

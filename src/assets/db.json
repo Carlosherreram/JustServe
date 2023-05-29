@@ -5,109 +5,126 @@
       "nameRestaurante": "Burger Mafia",
       "numberPers": 2,
       "userName": "Huber",
-      "idMesa": 2
+      "idReserve": 2
     },
     {
       "date": "2023-06-10",
       "nameRestaurante": "Es Fornet de Sineu",
       "numberPers": 2,
-      "userName": "Huber"
+      "userName": "Huber",
+      "idReserve": 3
     },
     {
       "date": "2022-05-15",
       "nameRestaurante": "La Piazzetta",
       "numberPers": 3,
-      "userName": "Huber"
+      "userName": "Huber",
+      "idReserve": 4
     },
     {
       "date": "2022-05-12",
       "nameRestaurante": "La Cucina",
       "numberPers": 2,
-      "userName": "Sandro"
+      "userName": "Sandro",
+      "idReserve": 5
     },
     {
       "date": "2022-05-14",
       "nameRestaurante": "Il Tano",
       "numberPers": 3,
-      "userName": "Sandro"
+      "userName": "Sandro",
+      "idReserve": 6
     },
     {
       "date": "2022-05-18",
       "nameRestaurante": "Celler Ca'n Amer",
       "numberPers": 4,
-      "userName": "Sandro"
+      "userName": "Sandro",
+      "idReserve": 7
     },
     {
       "date": "2024-03-13",
       "nameRestaurante": "Burger Mafia",
       "numberPers": 2,
-      "userName": "Toto"
+      "userName": "Toto",
+      "idReserve": 8
     },
     {
       "date": "2023-08-14",
       "nameRestaurante": "Pizzeria di Mario",
       "numberPers": 4,
-      "userName": "Toto"
+      "userName": "Toto",
+      "idReserve": 9
     },
     {
       "date": "2021-02-17",
       "nameRestaurante": "Es Cactus",
       "numberPers": 3,
-      "userName": "Toto"
+      "userName": "Toto",
+      "idReserve": 10
     },
     {
       "date": "2022-12-12",
       "nameRestaurante": "Burger Mafia",
       "numberPers": 12,
-      "userName": "Alfa"
+      "userName": "Alfa",
+      "idReserve": 11
     },
     {
       "date": "2023-04-20",
       "nameRestaurante": "La Piazzetta",
       "numberPers": 5,
-      "userName": "Alfa"
+      "userName": "Alfa",
+      "idReserve": 12
     },
     {
       "date": "2023-04-22",
       "nameRestaurante": "Es Fornet de Sineu",
       "numberPers": 2,
-      "userName": "Alfa"
+      "userName": "Alfa",
+      "idReserve": 13
     },
     {
       "date": "2023-08-10",
       "nameRestaurante": "Restaurante Gran Muralla",
       "numberPers": 2,
-      "userName": "Andrea"
+      "userName": "Andrea",
+      "idReserve": 14
     },
     {
       "date": "2023-05-13",
       "nameRestaurante": "Taco Loco",
       "numberPers": 3,
-      "userName": "Andrea"
+      "userName": "Andrea",
+      "idReserve": 15
     },
     {
       "date": "2022-02-16",
       "nameRestaurante": "The Taco Shop",
       "numberPers": 4,
-      "userName": "Andrea"
+      "userName": "Andrea",
+      "idReserve": 16
     },
     {
       "date": "2023-07-04",
       "nameRestaurante": "Il Tano",
       "numberPers": 2,
-      "userName": "Paula"
+      "userName": "Paula",
+      "idReserve": 17
     },
     {
       "date": "2023-02-19",
       "nameRestaurante": "Dragon Rojo",
       "numberPers": 3,
-      "userName": "Paula"
+      "userName": "Paula",
+      "idReserve": 18
     },
     {
       "date": "2021-05-11",
       "nameRestaurante": "Il Tano",
       "numberPers": 5,
-      "userName": "Paula"
+      "userName": "Paula",
+      "idReserve": 19
     }
   ],
   "restaurantes": [
@@ -475,7 +492,7 @@
       "id": 1,
       "comensales": 2,
       "hourReserve": null,
-      "reserve": false
+      "reserve": true
     },
     {
       "id": 2,
@@ -485,7 +502,7 @@
     {
       "id": 3,
       "comensales": 8,
-      "reserve": false
+      "reserve": true
     },
     {
       "id": 4,
@@ -495,7 +512,7 @@
     {
       "id": 5,
       "comensales": 5,
-      "reserve": false
+      "reserve": true
     },
     {
       "id": 6,

@@ -2,6 +2,7 @@ export interface Reserva {
   userName: string,
   nameRestaurante: string,
   date: string,
-  idMesa: number,
+  idReserve: number,
   numberPers: number
+  user_Id: number,
 }

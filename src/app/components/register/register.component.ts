@@ -32,7 +32,6 @@ export class RegisterComponent implements OnInit {
   }
 
   public onSubmit(): void {
-
     const nameInput = document.getElementById('nombre') as HTMLInputElement;
     const ageInput = document.getElementById('age') as HTMLInputElement;
     const usernameInput = document.getElementById('username') as HTMLInputElement;
@@ -44,20 +43,20 @@ export class RegisterComponent implements OnInit {
     if (!this.register) {
       const user: User = {
         name: nameInput.value,
-        age: Number(ageInput.value),
         username: usernameInput.value,
         email: emailInput.value,
         owner: Boolean(ownerInput.checked),
-        restaurantName: ownerInput.checked ? restaurantNameInput.value : '',
+        admin: false,
         password: passwordInput.value,
-        id: Number(this.dataService.getUsers.length + 2)
+        age: Number(ageInput.value),
+        restaurantName: ownerInput.checked ? restaurantNameInput.value : '',
 
       };
-      this.register = true
-      this.authService.isLoggedIn = true
       this.dataService.postUsers(user).subscribe(
-        (response: any) => {
-          console.log(response);
+        (userLogged: User) => {
+          this.register = true
+          this.authService.isLoggedIn = true
+          this.dataService.userLogged = userLogged
         },)
 
     } else {

@@ -2,15 +2,19 @@
   <div class="header">
     <h1>Mis Reservas</h1>
   </div>
-  <div class="reservas" *ngFor="let reserva of reservas"
-    [ngStyle]="{'background-color': isReservaExpired(reserva) ? 'grey' : 'white'}">
-    <div class="reserva" name="reserva">
-      <div class="restaurante">
-        <h2>{{reserva.nameRestaurante}}</h2>
-      </div>
-      <div class="info">
-        <p>Fecha: {{reserva.date}}</p>
-        <p>Cantidad de personas: {{reserva.numberPers}}</p>
+  <div *ngIf="logged && loaded">
+    <div class="containerReservas">
+      <div *ngFor=" let reserva of reservas" class="reservas">
+        <div class="restaurante">
+          <h2>Fecha: {{reserva.date}}</h2>
+        </div>
+        <div class="info">
+          <p>Hora: {{reserva.start_time}}</p>
+          <p>Mesa: {{reserva.table_id}}</p>
+        </div>
+        <div class="options">
+          <input (click)="deleteReserve(this.reserva.id)" class="delete" type="button" value="Eliminar">
+        </div>
       </div>
     </div>
   </div>

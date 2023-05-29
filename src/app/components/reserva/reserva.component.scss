@@ -8,7 +8,7 @@
   height: 100%;
   background-color: $accentColor;
   margin-top: 5%;
-  gap: 1rem;
+  gap: 2rem;
   margin-bottom: 20%;
 
   .header {
@@ -21,22 +21,81 @@
     color: white;
   }
 
-  .reservas {
+  .options {
     display: flex;
-    width: 30%;
-    justify-content: space-around;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: white;
-    box-shadow: -1.2rem 0.5rem 2rem -0.5rem $buttonHover;
-    border-radius: 30px;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all;
+    transition-duration: 450ms;
+
+    input {
+      height: 30px;
+      width: 120px;
+      border-radius: 1rem;
+    }
+
+    .delete {
+      background-color: rgba(243, 5, 5, 0.515);
+
+      &:hover {
+        height: 35px;
+        background-color: rgba(243, 5, 5, 0.696);
+        box-shadow: -1.2rem 0.5rem 2rem -0.5rem rgba(225, 103, 103, 0.96);
+        cursor: pointer;
+      }
+    }
+
+    .edit {
+      background-color: rgba(0, 183, 255, 0.6);
+
+      &:hover {
+        height: 35px;
+        background-color: rgba(0, 183, 255, 0.746);
+        box-shadow: -1.2rem 0.5rem 2rem -0.5rem rgba(103, 190, 225, 0.96);
+        cursor: pointer;
+      }
+    }
   }
 
-  .reserva {
-    display: flex;
-    flex-basis: 50%;
-    /* divide las tarjetas por la mitad */
+  .containerReservas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+  }
+
+  .reservas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+    height: 150px;
+    width: 600px;
+    background-color: white;
+    border: solid 0.2rem $accentShadow;
+    border-radius: 1rem;
+  }
+
+  .reservasExpired {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-start: 2;
+    justify-items: center;
+    align-items: center;
+    gap: 2rem;
+    height: 150px;
+    width: 600px;
+    background-color: $boxes;
+    border-radius: 1rem;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: white;
+      overflow-x: hidden;
+      /* evita que el contenido se desplace horizontalmente */
+    }
   }
 
   .restaurante {
@@ -44,10 +103,10 @@
     flex-direction: column;
     gap: 0.5rem;
     color: #30DDB7;
+    margin-left: 0.5rem;
   }
 
   h2 {
-    width: 50%;
     font-size: 1.5rem;
     font-weight: bold;
   }

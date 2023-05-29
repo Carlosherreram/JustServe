@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { error } from 'console';
 import { Carta } from 'src/app/models/carta.model';
 import { Mesa } from 'src/app/models/mesas.model';
 import { Restaurante } from 'src/app/models/restaurante.model';
@@ -28,8 +29,8 @@ export class SelectedRestaurantComponent implements OnInit {
   public hours: string[] = ['12:30', '13:30', '14:30', '15:30', '16:30', '16:30', '20:00', '21:00', '22:00']
 
   constructor(public restauranteService: RestauranteService,
-    private readonly DATA_SERVICE: DataService,
-    private readonly authService: AuthService,
+    public DATA_SERVICE: DataService,
+    public authService: AuthService,
   ) {
 
   }
@@ -53,6 +54,8 @@ export class SelectedRestaurantComponent implements OnInit {
     }
   }
 
+
+
   public showNotification(message: string, duration: number): void {
     const notification = document.querySelector('.notification');
 
@@ -68,10 +71,7 @@ export class SelectedRestaurantComponent implements OnInit {
 
 
   public cleanSelected(): void {
-    console.log('x')
     this.selectedRestaurante = null
-    console.log(this.selectedRestaurante)
-    console.log('x')
   }
 
   public searchReserve(start_time: string, date: string, restaurantName: string): Mesa[] {
@@ -88,18 +88,23 @@ export class SelectedRestaurantComponent implements OnInit {
 
   }
 
-  public makeReserve(
-    day: string, hour: string, mesa: number, numberPers: number, nameRest: string)
-    : void {
-    if (day != '' && hour != '' && nameRest != '' && mesa != 0 && numberPers != 0) {
-      // this.DATA_SERVICE.postReserve(day, hour, mesa, nameRest, numberPers)
-      this.showNotification('RESERVA HECHA', 3000)
-      this.DATA_SERVICE.postReserve(day, hour, mesa, nameRest, numberPers, this.authService.userName)
+  public makeReserve(day: string, hour: string, mesa: number, numberPers: number, nameRest: string): void {
+    if (day !== '' && hour !== '' && nameRest !== '' && mesa !== 0 && numberPers !== 0) {
+      this.showNotification('RESERVA HECHA', 3000);
+      this.DATA_SERVICE.postReserve(day, hour, mesa, nameRest, numberPers, this.authService.userName, this.DATA_SERVICE.token)
+        .subscribe(() => {
+          console.log('posted');
+        }, (error) => {
+          console.error(error);
+          if (error.status === 400) {
+            this.showNotification('MESA OCUPADA', 3000);
+          } else {
+            // Manejar otros errores si es necesario
+          }
+        });
     } else {
-      this.showNotification('FALTAN CAMPOS POR RELLENAR', 3000)
+      this.showNotification('FALTAN CAMPOS POR RELLENAR', 3000);
     }
-
   }
-
 
 }

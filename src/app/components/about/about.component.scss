@@ -36,5 +36,11 @@
     margin-bottom: 8rem;
   }
 
+  @media screen and (max-width: 942px) {
+    .image {
+      display: none;
+    }
+
+  }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Restaurante } from 'src/app/models/restaurante.model';
 import { User } from 'src/app/models/users.model';
 import { AuthService } from 'src/app/services/auth.service';
+import { DataService } from 'src/app/services/data.service';
 import { RestauranteService } from 'src/app/services/restaurante.service';
 
 @Component({
@@ -13,8 +14,10 @@ export class ProfileComponent implements OnInit {
   public userLog: User = this.authService.userLogged[0]
   public restaurantes: Restaurante[] = []
   public restaurante: Restaurante = {} as Restaurante;
+  public userRegister: User | undefined = this.DATASERVICE.userLogged
 
   constructor(private authService: AuthService,
+    private DATASERVICE: DataService,
     private restaurantesService: RestauranteService,
     private cdRef: ChangeDetectorRef) {
   }
@@ -26,9 +29,10 @@ export class ProfileComponent implements OnInit {
       this.ownerRestaurant()
     })
 
+
   }
 
-  ownerRestaurant(): void {
+  public ownerRestaurant(): void {
     if (this.userLog.owner) {
       let restaurantefind = this.restaurantes.find(restaurante =>
         restaurante.name === this.userLog.restaurantName)

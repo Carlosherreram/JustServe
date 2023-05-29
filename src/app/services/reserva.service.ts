@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { ReservaResponse } from 'src/app/models/reserva-response';
 import { Reserva } from 'src/app/models/reserva.model';
 import { Restaurante } from 'src/app/models/restaurante.model';
 import { DataService } from 'src/app/services/data.service';
@@ -13,12 +14,20 @@ export class ReservaService {
   public userReserves: Reserva[] = []
 
   constructor(private data: DataService) {
-    this.userReservas()
+    this.getReserves()
   }
 
 
-  public userReservas(): Observable<Reserva[]> {
-    return this.data.getReserves();
+  public getReserves(): Observable<ReservaResponse[]> {
+    return this.data.getReserves(this.data.token);
+  }
+
+  public deleteReserve(id: number, token: string) {
+    this.data.deleteReserves(id, token)
+  }
+
+  public updateReserve(id: number, start_time: string) {
+    return this.data.updateReserva(id, start_time)
   }
 
 
