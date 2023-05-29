@@ -1,6 +1,9 @@
-<div class="container">
+<div class="container" *ngIf="in">
   <div class="header">
     <h1>Mis Reservas</h1>
+    <div class="notification">
+      <p *ngIf="MSG">{{ MSG }}</p>
+    </div>
   </div>
   <div *ngIf="logged && loaded">
     <div class="containerReservas">
@@ -18,4 +21,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="container" *ngIf="!in">
+  <h1>INICIA SESION CRACK</h1>
 </div>
