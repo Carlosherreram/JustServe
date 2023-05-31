@@ -47,10 +47,11 @@ export class SelectedRestaurantComponent implements OnInit {
       const options: {
         weekday?: 'long' | 'short' | 'narrow';
         day?: 'numeric' | '2-digit';
-      } = { weekday: 'long', day: 'numeric' }
-      let nextWeek1 = nextWeek.toLocaleString('es', options);
+        month?: 'long' | 'short' | 'narrow';
+      } = { weekday: 'long', day: 'numeric', month: 'long' };
+      const nextWeekFormatted = nextWeek.toLocaleString('es', options);
 
-      this.days.push(nextWeek1);
+      this.days.push(nextWeekFormatted);
     }
   }
 
