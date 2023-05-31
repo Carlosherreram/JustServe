@@ -77,8 +77,10 @@
   }
 
   .containerReservas {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
   }
 
@@ -145,5 +147,16 @@
 
   .info p {
     margin: 0;
+  }
+
+  @media screen and (max-width: 630px) {
+    .reservas {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 100%;
+      width: 100%;
+
+    }
   }
 }
