@@ -41,10 +41,7 @@ export class AuthService {
   }
 
   public addCookie(key: string, value: string): void {
-
-    // this.cookieService.set(key, value);
     document.cookie = `${key} = ${value}; path = /`
-
   }
 
   public getUserCookie(): String {

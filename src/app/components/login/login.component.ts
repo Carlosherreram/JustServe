@@ -65,12 +65,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  public checkSession() {
-    if (this.cookieService.get('LOGGED') === 'true') {
-    } else {
-    }
-  }
-
   public logout() {
     this.cookieService.delete('LOGGED');
   }

@@ -8,16 +8,13 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   public MSG: string = 'Ya registrado'
   private register: boolean = false
   public nameRest: string | null = null; // inicialmente establecido en null
   public isOwner: boolean = false
 
   constructor(private authService: AuthService, private dataService: DataService) { }
-
-  ngOnInit(): void {
-  }
 
   public onRegister(): void {
     this.authService.login()
